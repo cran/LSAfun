@@ -1,0 +1,27 @@
+export(Cosine)
+export(MultipleChoice)
+export(Predication)
+export(breakdown)
+export(choose.target)
+export(coherence)
+export(compose)
+export(costring)
+export(genericSummary)
+export(multicos)
+export(multicostring)
+export(neighbours)
+export(plot_neighbours)
+
+importFrom(lsa,
+           textmatrix)
+importFrom(lsa,
+           lsa)
+importFrom(lsa,
+           cosine)
+		   
+importFrom(rgl,
+			plot3d)
+importFrom(rgl,
+			text3d)
+importFrom(rgl,
+			segments3d)
