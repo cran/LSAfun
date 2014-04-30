@@ -30,5 +30,5 @@ coherence <- function(x,split=c(".","!","?"),tvectors=tvectors,
     out <- list(local=local,global=global)
     out
     
-  }else{warning("tvectors must be a matrix!")}
+  }else{stop("tvectors must be a matrix!")}
 }

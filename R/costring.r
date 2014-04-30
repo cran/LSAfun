@@ -1,6 +1,8 @@
 ##### Sentence Comparisons #####################
 
 #' @export
+#' @importFrom lsa cosine 
+ 
 costring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
   
   if(class(tvectors) == "matrix"){
@@ -48,6 +50,6 @@ costring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
     
     cos
     
-  }else{warning("tvectors must be a matrix!")}
+  }else{stop("tvectors must be a matrix!")}
   
 }

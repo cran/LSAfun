@@ -10,18 +10,11 @@ export(genericSummary)
 export(multicos)
 export(multicostring)
 export(neighbours)
+export(normalize)
 export(plot_neighbours)
-
-importFrom(lsa,
-           textmatrix)
-importFrom(lsa,
-           lsa)
-importFrom(lsa,
-           cosine)
-		   
-importFrom(rgl,
-			plot3d)
-importFrom(rgl,
-			text3d)
-importFrom(rgl,
-			segments3d)
+importFrom(lsa,cosine)
+importFrom(lsa,lsa)
+importFrom(lsa,textmatrix)
+importFrom(rgl,plot3d)
+importFrom(rgl,segments3d)
+importFrom(rgl,text3d)

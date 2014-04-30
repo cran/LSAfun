@@ -15,7 +15,7 @@ print.Pred <- function(obj){
 # Function
 
 #' @export
-Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE){
+Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE,norm="none"){
   
   if(class(tvectors) == "matrix"){
     
@@ -33,10 +33,10 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE){
     
     # m nearest types to P
     
-   
+    
     near.P <- neighbours(P,(m+1),tvectors=tvectors,
                          breakdown=breakdown)[2:(m+1)]   
-
+    
     
     
     # k nearest to A
@@ -49,13 +49,49 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE){
     neighbours <- names(near.PA)
     tvectors_PA <- tvectors[names(near.PA),]
     
+    
+    
     if(k==1){
-      PA <- tvectors[P,]+tvectors[A,]+tvectors[names(near.PA),]
-      P.Pred <- tvectors[P,]+tvectors[names(near.PA),] 
-    } 
+      
+      if(norm=="none"){
+        PA <- tvectors[P,]+tvectors[A,]+tvectors[names(near.PA),]
+        P.Pred <- tvectors[P,]+tvectors[names(near.PA),]
+      }
+      
+      if(norm=="all"){
+        PA <- normalize(tvectors[P,]) + normalize(tvectors[A,]) + normalize(tvectors[names(near.PA),])
+        P.Pred <- normalize(tvectors[P,]) + normalize(tvectors[names(near.PA),])
+      }
+      
+      if(norm=="block"){
+        PA <- normalize(tvectors[A,]) + normalize(tvectors[P,] + tvectors[names(near.PA),])
+        P.Pred <- normalize(tvectors[P,] + tvectors[names(near.PA),])
+      }
+      
+    }
+    
+    
     if(k >1){
-      PA <- tvectors[P,]+tvectors[A,]+colSums(tvectors[names(near.PA),])
-      P.Pred <- tvectors[P,]+colSums(tvectors[names(near.PA),])
+      
+      if(norm=="none"){
+        PA <- tvectors[A,] + tvectors[P,] + colSums(tvectors[names(near.PA),])
+        P.Pred <- tvectors[P,] + colSums(tvectors[names(near.PA),])
+      }
+      
+      if(norm=="all"){        
+        normPA <- tvectors[names(near.PA),]
+        normPA <- t(apply(normPA,1,normalize))
+        
+        PA <- normalize(tvectors[A,]) + normalize(tvectors[P,]) + colSums(normPA)
+        P.Pred <- normalize(tvectors[P,]) + colSums(normPA)
+      }
+      
+      if(norm=="block"){
+        PA <- normalize(tvectors[A,]) + normalize(tvectors[P,] + colSums(tvectors[names(near.PA),]))
+        P.Pred <- normalize(tvectors[P,] + colSums(tvectors[names(near.PA),]))
+      }
+      
+      
     }
     
     
@@ -66,7 +102,7 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE){
     out
     
   }else{
-    warning("tvectors must be a matrix!")
+    stop("tvectors must be a matrix!")
   } 
   
 }

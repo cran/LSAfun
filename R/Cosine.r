@@ -1,6 +1,8 @@
 #### Easier Two-Word Cosine 
 
 #' @export
+#' @importFrom lsa cosine 
+
 Cosine <- function(x,y,tvectors=tvectors,breakdown=TRUE){
   
   if(class(tvectors) == "matrix"){
@@ -21,8 +23,10 @@ Cosine <- function(x,y,tvectors=tvectors,breakdown=TRUE){
     }else{
       
       warning("x and y must be words in rownames(tvectors)")
+      return(NA)
+      
     }
     
-  }else{warning("tvectors must be a matrix!")}
+  }else{stop("tvectors must be a matrix!")}
   
 }

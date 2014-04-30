@@ -1,6 +1,7 @@
 ##### Vector x Vector Comparison
 
 #' @export
+#' @importFrom lsa cosine
 multicos <- function(x,y=x,tvectors=tvectors,breakdown=TRUE){
   
   if(class(tvectors) == "matrix"){
@@ -71,6 +72,6 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=TRUE){
     
     return(cosmat)
     
-  }else{warning("tvectors must be a matrix!")}
+  }else{stop("tvectors must be a matrix!")}
   
 }

@@ -3,6 +3,7 @@
 ### Function
 
 #' @export
+#' @importFrom lsa cosine
 neighbours <- function(x,n,tvectors=tvectors,breakdown=TRUE){
   
   if(class(tvectors) == "matrix"){
@@ -23,6 +24,7 @@ neighbours <- function(x,n,tvectors=tvectors,breakdown=TRUE){
       }else{
         
         warning("x must be a word in rownames(tvectors)")
+        return(NA)
       }
     }
     
@@ -48,6 +50,6 @@ neighbours <- function(x,n,tvectors=tvectors,breakdown=TRUE){
     }
     
   }else{
-    warning("tvectors must be a matrix!")
+    stop("tvectors must be a matrix!")
   } 
 }

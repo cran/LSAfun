@@ -12,7 +12,7 @@ the Argument are selected. The vector for the expression is then computed as the
 Predicate vector, Argument vector, and the vectors of those \code{k} neighbours (the \code{k}-neighbourhood).
 }
 
-\usage{Predication(P,A,m,k,tvectors=tvectors,breakdown=TRUE)}
+\usage{Predication(P,A,m,k,tvectors=tvectors,breakdown=TRUE,norm="none")}
 
 \arguments{
   \item{P}{Predicate of the expression, a single word (character vector)}
@@ -21,6 +21,7 @@ Predicate vector, Argument vector, and the vectors of those \code{k} neighbours 
   \item{k}{size of the \code{k}-neighbourhood; \code{k} \eqn{\le} \code{m}}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
   \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+  \item{norm}{whether to \code{\link[LSAfun]{normalize}} the single word vectors before applying a composition function. Setting \code{norm = "none"} will not perform any normalizations, setting \code{norm = "all"} will normalize every involved word vector (Predicate, Argument, and every single activated neighbour). Setting \code{norm = "block"} will normalize the Argument vector and will normalize the [Predicate + Neighbours] vector, to weight the Argument and the "Predicate in context" equally.}
   
   }
  

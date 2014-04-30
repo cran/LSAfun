@@ -2,6 +2,9 @@
 ##### Generic Summary ##########################
 
 #' @export
+#' @importFrom lsa cosine
+#' @importFrom lsa textmatrix
+#' @importFrom lsa lsa 
 genericSummary <- function(text,k,split=c(".","!","?"),min=5,breakdown=TRUE,...){
  
   #### Decompose the document D into individual sentences

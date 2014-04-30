@@ -1,6 +1,7 @@
 ##### Multicostring
 
 #' @export
+#' @importFrom lsa cosine
 multicostring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
   
   if(class(tvectors) == "matrix"){
@@ -63,6 +64,6 @@ multicostring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
     
     cosmat
     
-  }else{warning("tvectors must be a matrix!")}
+  }else{stop("tvectors must be a matrix!")}
   
 }
