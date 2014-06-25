@@ -36,12 +36,17 @@ breakdown <- function(x){
   
   x <- gsub(x=x,pattern="\xdf",replacement="ss")
   
+  ## Convert to ASCII
+  
+  x <- iconv(x,to="ASCII//TRANSLIT")
+  
   ## Punctation, Numbers and Blank lines
   
-  x <- gsub(x=x,pattern="[[:punct:]]", replacement="")
-  x <- gsub(x=x,pattern="[[:digit:]]", replacement="")
-  x <- gsub(x=x,pattern="\n", replacement="")
+  x <- gsub(x=x,pattern="[[:punct:]]", replacement=" ")
+  x <- gsub(x=x,pattern="[[:digit:]]", replacement=" ")
+  x <- gsub(x=x,pattern="\n", replacement=" ")
   x <- gsub(x=x,pattern="\"", replacement=" ")
+
   
   return(x)  
 }

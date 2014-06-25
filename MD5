@@ -1,9 +1,10 @@
-8e0ded486ccae32bc27965ff7e4388fc *DESCRIPTION
-99a19ad42348e2ab0e25dc2856e0b76a *NAMESPACE
+3682320649bc6ca1a46c077a55f423c5 *ChangeLog
+7e0f6a79f3ea85abc21e4bee8f9a6def *DESCRIPTION
+ace8c997525827165f2e96575811b9b8 *NAMESPACE
 a2ce7f8e5c6c45f8cc2c7b7012c49d64 *R/Cosine.r
 8ff748b35a0d126c60763a5967930f7b *R/MultipleChoice.r
 c1bf18fa22ec49ca1e8554259918ab37 *R/Predication.r
-603c2909c1811e8ad20b2ced11a60579 *R/breakdown.r
+abd11be5880ffd45206c2792bf132439 *R/breakdown.r
 d47ecdc55f635c85346f7a436c19e142 *R/choose.target.r
 98f9987941ddafcf309ea731246d0eac *R/coherence.r
 ac0178b35ec5c4019deff94145219fc5 *R/compose.r
@@ -14,7 +15,8 @@ f3b3bc307f32b5a963716f6608becb38 *R/modulo.r
 b64fef1423819ee8c4fffb1698b0311f *R/multicostring.r
 ee85176ad508829a5731ac48208bfa98 *R/neighbours.r
 a57bb9922868782370e6105840d747e5 *R/normalize.r
-6cb9b394660e2f69b1e71cd74cdfe13d *R/plot_neighbours.r
+ebcf8684ad16aefae2060fb7be802de0 *R/plot_neighbours.r
+020e92a453eab8183bb29fe3d563b84a *R/plot_wordlist.r
 e757757885060c3411c60405766e6e06 *R/pos.r
 5d03c38c288426a82ed66bb26ccdc657 *data/wonderland.rda
 d26c062fbb8d56e550b88bd684eb679d *man/Cosine.Rd
@@ -31,5 +33,6 @@ e655916c5b05d88682efc8db12b73147 *man/multicos.Rd
 efcaa43b31dc8e5e9e6b9f3c6936d1b1 *man/multicostring.Rd
 490b9659c3af74af4ce70e5689d69194 *man/neighbours.Rd
 548b7151b8e3a5c057e0f658099191db *man/normalize.Rd
-6b3a3d36885922be75647592fe50041b *man/plot_neighbours.Rd
+1daee9a7f70cd534fae444df974448be *man/plot_neighbours.Rd
+32c11b9f4f3d3910357abd5929b62087 *man/plot_wordlist.Rd
 1cab4431931080843f1b48ea1e1fadb5 *man/wonderland.Rd

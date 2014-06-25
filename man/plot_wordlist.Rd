@@ -1,33 +1,25 @@
-\name{plot_neighbours}
-\alias{plot_neighbours}
-\title{2D- or 3D-Plot of neighbours}
+\name{plot_wordlist}
+\alias{plot_wordlist}
+\title{2D- or 3D-Plot of a list of words}
 \encoding{latin1}
 
-\description{2D- or 3D-Approximation of the neighbourhood of a given word/sentence}
+\description{2D or 3D-Plot of mutual word similarities to a given list of words}
 
 \details{
-Attempts to create an image of the semantic neighbourhood (based on cosine similarity) to a
-given word, sentence/ document, or vector. An attempt is made to depict this subpart of the LSA
-space in a two- or three-dimensional plot.\cr
-To achieve this, either a Principal Component
-Analysis (PCA) or a Multidimensional Scaling (MDS) is computed to preserve the interconnections between all the words in this
-neighbourhod as good as possible. Therefore, it is important to note that the image created from
-this function is only the best two- or three-dimensional approximation to the true LSA space subpart.\cr
+Computes all pairwise similarities within a given list of words. On this similarity matrix, a Principal Component Analysis (PCA) or a Multidimensional Sclaing (MDS) is applied to get a two- or three-dimensional solution that best captures the similarity structure. This solution is then plottet.
 \cr
-For creating pretty plots showing the similarity structure within this neighbourhood best, set \code{connect.lines="all"} and \code{col="rainbow"}
+For creating pretty plots showing the similarity structure within this list of words best, set \code{connect.lines="all"} and \code{col="rainbow"}
 
 }
 
-\usage{plot_neighbours(x,n,connect.lines=0,start.lines=T,method="PCA",dims=3,
+\usage{plot_wordlist(x,connect.lines=0,method="PCA",dims=3,
  axes=F,box=F,alpha=0.5,col="black",tvectors=tvectors,breakdown=TRUE,\dots)}
 
 \arguments{
-  \item{x}{a character vector of \code{length(x) = 1} or a numeric of \code{length=ncol(tvectors)} vector with same dimensionality as LSA space}
-  \item{n}{the number of neighbours to be computed}
+  \item{x}{a character vector of \code{length(x) > 1} that contains multiple words}
   \item{dims}{the dimensionality of the plot; set either \code{dims = 2} or \code{dims = 3}}
   \item{method}{the method to be applied; either a Principal Component Analysis (\code{method="PCA"}) or a Multidimensional Scaling (\code{method="MDS"}) }
   \item{connect.lines}{(3d plot only) the number of closest associate words each word is connected with via line. Setting \code{connect.lines="all"} will draw all connecting lines and will automatically apply \code{alpha="shade"}; it will furthermore override the \code{start.lines} argument}
-  \item{start.lines}{(3d plot only) whether lines shall be drawn between \code{x} and all the neighbours}
   \item{axes}{(3d plot only) whether axes shall be included in the plot}
   \item{box}{(3d plot only) whether a box shall be drawn around the plot}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
@@ -47,7 +39,7 @@ For creating pretty plots showing the similarity structure within this neighbour
   \code{\link[lsa]{cosine}},
   \code{\link[LSAfun]{neighbours}},
   \code{\link[LSAfun]{multicos}},
-  \code{\link[LSAfun]{plot_wordlist}},
+  \code{\link[LSAfun]{plot_neighbours}},
   \code{\link[rgl]{plot3d}},
   \code{\link[stats]{princomp}}
 
@@ -61,13 +53,9 @@ Mardia, K.V., Kent, J.T., & Bibby, J.M. (1979). \emph{Multivariate Analysis}, Lo
 \examples{data(wonderland)
 
 ## Standard Plot
-plot_neighbours("cheshire",n=20,tvectors=wonderland)  
 
-## Pretty Plot
-plot_neighbours("cheshire",n=20,tvectors=wonderland,
-                connect.lines="all",col="rainbow")  
+words <- c("alice","hatter","queen","knight","hare","cheshire") 
+            
+plot_wordlist(words,tvectors=wonderland,method="MDS",dims=2)
 
-
-
-plot_neighbours(compose("mad","hatter",tvectors=wonderland),
-                n=20, connect.lines=2,tvectors=wonderland)}
+}

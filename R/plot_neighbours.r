@@ -7,12 +7,15 @@
 #' @importFrom rgl segments3d
 #' 
 plot_neighbours <- function(x,n,connect.lines=0,
-                            start.lines=T,axes=F,box=F,
+                            start.lines=T,method="PCA",dims=3,
+                            axes=F,box=F,
                             alpha=.5, col="black", 
                             tvectors=tvectors,breakdown=TRUE,
                             ...){
   
   ### Compute neighbours
+  
+  if(!(dims %in% 2:3)){stop("Please set dim to 2 or 3")}
   
   if(class(tvectors) == "matrix"){
     
@@ -85,21 +88,43 @@ plot_neighbours <- function(x,n,connect.lines=0,
     }
     
     
-    ## Reduce to three dimensions
+    ## Reduce dimensions
     
+    if(method=="PCA"){
     pca1 <- princomp(covmat=cos.near)
     L    <- loadings(pca1) %*% diag(pca1$sdev)
-    Lt   <- varimax(L[,1:3])$loadings
+    Lt   <- varimax(L[,1:dims])$loadings
+    }
+    
+    if(method=="MDS"){
+    dissim <- 1 - cos.near  
+      
+    mds1 <- cmdscale(dissim,eig=TRUE, k=dims) 
+    Lt   <- mds1$points   
+    }
     
     Lt           <- as.data.frame(Lt[,])
-    colnames(Lt) <- c("x","y","z")
+    
+    if(dims==2){colnames(Lt) <- c("x","y")}
+    if(dims==3){colnames(Lt) <- c("x","y","z")}
+    
     Lt$words     <- rownames(Lt)
     Lt$words2     <- iconv(Lt$words, to="ASCII//TRANSLIT")
     
     
-    ## Plot
+    ## Plot 2d
+    
+    plot(Lt$x,Lt$y,xlab="Dimension 1",ylab="Dimension 2",pch=20,type="n",
+         xlim=c(min(Lt$x)-0.1,max(Lt$x)+0.1),ylim=c(min(Lt$y)-0.1,max(Lt$y)+0.1),...)
+    with(Lt,points(x,y,cex=.6,pch=20))
+    with(Lt,text(x,y,words2,cex=.6))
     
     
+    
+    ## Plot 3d
+    
+    
+    if(dims == 3){
     with(Lt,plot3d(x,y,z,box=box,axes=axes,xlab="",ylab="",zlab=""
                    ,xakt="n",yakt="n",zakt="n",col="black",...))
     
@@ -258,7 +283,7 @@ plot_neighbours <- function(x,n,connect.lines=0,
       
     }
     
-    
+    }
     
   }else{warning("tvectors must be a matrix!")}
 }

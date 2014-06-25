@@ -1,0 +1,29 @@
+[version 0.3] ChangeLog
+
+(1) Modifications for breakdown(), can now deal with more special characters  
+
+(2) Added the argument "method" and the argument "dims" to plot_neighbours
+
+(3) Added the function plot_wordlist
+
+
+[version 0.2] ChangeLog
+
+(1) Added function normalize()
+	(1.1) Enabled Argument norm for compose()
+	(1.2) Enabled Argument norm for Predication()
+	(1.3) Updated Help file for compose() and Predication()
+
+
+(2) Calling the function Cosine() for words that are not in rownames(tvectors) now returns NA instead of the warning message as value
+	(2.1) Affects the functions Cosine(), compose(), neighbours()
+
+(3) For functions using the argument tvectors, the warning message "tvectors must be a matrix!" was replaced by an error message
+
+(4) Fixed a bug in plot_neighbours() where the function sometimes did not find the neighbours in rownames(tvectors) due to "breakdown" issues
+
+(5) Major updates for plot_neighbours() - prettier plots
+	(5.1) Added parameter "alpha" (luminance for start.lines and connect.lines, with option "shade)
+	(5.2) Added parameter "col" (with additional option "rainbow" for rainbow colors depending on cosine between two words)
+        (5.3) Added option "all" for "connect.lines" (will automatically use alpha="shade")
+	(5.4) Updated Help file for plot_neighbours()
