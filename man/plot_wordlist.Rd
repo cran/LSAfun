@@ -26,20 +26,21 @@ For creating pretty plots showing the similarity structure within this list of w
   \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
   \item{alpha}{(3d plot only) a vector of one or two numerics between 0 and 1 specifying the luminance of \code{start.lines} (first entry) and \code{connect.lines} (second entry). Specifying only one numeric will pass this value to both kinds of lines. With setting \code{alpha="shade"}, the luminance of every line will be adjusted to the cosine between the two words it connects.}
   \item{col}{(3d plot only) a vector of one or two characters specifying the color of \code{start.lines} (first entry) and \code{connect.lines} (second entry). Specifying only one colour will pass this colour to both kinds of lines. With setting \code{col ="rainbow"}, the colour of every line will be adjusted to the cosine between the two words it connects. Setting \code{col ="rainbow"} will alsp apply \code{alpha="shade"}}
-  \item{\dots}{additional arguments which will be passed to \code{\link[rgl]{plot3d}} in a three-dimensional plot or to \code{\link[graphics]{plot}} in a two-dimensional plot}
+  \item{\dots}{additional arguments which will be passed to \code{\link[rgl]{plot3d}} (in a three-dimensional plot only)}
  
  
 }
-\value{see \code{\link[rgl]{plot3d}}: this function is called for the side effect of drawing the plot; a vector of object IDs is returned}
+\value{see \code{\link[rgl]{plot3d}}: this function is called for the side effect of drawing the plot; a vector of object IDs is returned.\cr
+\code{plot_neighbors} also gives the coordinate vectors of the words in the plot as a data frame}
 
 \author{
   Fritz Günther
 }
 \seealso{
   \code{\link[lsa]{cosine}},
-  \code{\link[LSAfun]{neighbours}},
+  \code{\link[LSAfun]{neighbors}},
   \code{\link[LSAfun]{multicos}},
-  \code{\link[LSAfun]{plot_neighbours}},
+  \code{\link[LSAfun]{plot_neighbors}},
   \code{\link[rgl]{plot3d}},
   \code{\link[stats]{princomp}}
 

@@ -11,7 +11,7 @@ In the traditional LSA approach, the vector \emph{D} for a document (or a senten
              
 This function computes the cosine between two documents (or sentences) or the cosine between a single word and a document (or sentence).\cr\cr
      The format of \code{x} (or \code{y}) can be of the kind \code{x <- "word1 word2 word3"} , but also of the kind \code{x <- c("word1", "word2", "word3")}. This allows for simple copy&paste-inserting of text,
-but also for using character vectors, e.g. the output of \code{neighbours()}.\cr\cr
+but also for using character vectors, e.g. the output of \code{neighbors()}.\cr\cr
 To import a document \emph{Document.txt} to from a directory for comparisons, set your working
 directory to this directory using \code{setwd()}. Then use the following command lines:\cr\cr
 \code{fileName1 <- "Alice_in_Wonderland.txt"}\cr

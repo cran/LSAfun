@@ -1,3 +1,16 @@
+[version 0.3.1] ChangeLog
+
+(1) Added datasets: syntest, oldbooks, priming
+
+(2) Changed function names: neighbours() to neighbors()
+                            plot_neighbours() to plot_neighbors()
+
+(3) Updates for plot_neighbors and plot_wordlist
+	(3.1) Changed a bug in plot_neighbors and plot_wordlist that always plotted 
+		  two- as well as three-dimensional plots
+	(3.2) plot_neighbors and plot_wordlist now also give the coordinates for
+		  the words in the plot as a data frame (default output)
+
 [version 0.3] ChangeLog
 
 (1) Modifications for breakdown(), can now deal with more special characters  
@@ -25,5 +38,5 @@
 (5) Major updates for plot_neighbours() - prettier plots
 	(5.1) Added parameter "alpha" (luminance for start.lines and connect.lines, with option "shade)
 	(5.2) Added parameter "col" (with additional option "rainbow" for rainbow colors depending on cosine between two words)
-        (5.3) Added option "all" for "connect.lines" (will automatically use alpha="shade")
+    (5.3) Added option "all" for "connect.lines" (will automatically use alpha="shade")
 	(5.4) Updated Help file for plot_neighbours()

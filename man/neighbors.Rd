@@ -1,6 +1,6 @@
-\name{neighbours}
-\alias{neighbours}
-\title{Find nearest neighbours}
+\name{neighbors}
+\alias{neighbors}
+\title{Find nearest neighbors}
 \encoding{latin1}
 
 \description{Returns the n nearest words to a given word or sentence/document}
@@ -13,26 +13,26 @@ directory to this directory using \code{setwd()}. Then use the following command
 \code{fileName1 <- "Alice_in_Wonderland.txt"}\cr
 \code{x <- readChar(fileName1, file.info(fileName1)$size)}.\cr\cr
 Since \code{x} can also be chosen to be any vector of the active LSA Space, this function can be
-combined with \code{compose()} to compute neighbours of complex expressions (see examples)
+combined with \code{compose()} to compute neighbors of complex expressions (see examples)
 }
 
-\usage{neighbours(x,n,tvectors=tvectors,breakdown=TRUE)}
+\usage{neighbors(x,n,tvectors=tvectors,breakdown=TRUE)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} or a numeric of \code{length=ncol(tvectors)} vector with same dimensionality as LSA space}
-  \item{n}{the number of neighbours to be computed}
+  \item{n}{the number of neighbors to be computed}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
   \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
  
 }
-\value{A named numeric vector. The neighbours are given as names of the vector, and their respective cosines to the input as vector entries.}
+\value{A named numeric vector. The neighbors are given as names of the vector, and their respective cosines to the input as vector entries.}
 
 \author{
   Fritz Günther
 }
 \seealso{
   \code{\link[lsa]{cosine}},
-  \code{\link[LSAfun]{plot_neighbours}},
+  \code{\link[LSAfun]{plot_neighbors}},
   \code{\link[LSAfun]{compose}}
   
 }
@@ -47,7 +47,7 @@ Semantic Analysis} (pp. 35-56). Mahwah, NJ: Erlbaum.\cr\cr
 
 \examples{data(wonderland)
 
-neighbours("cheshire",n=20,tvectors=wonderland) 
+neighbors("cheshire",n=20,tvectors=wonderland) 
 
-neighbours(compose("mad","hatter",method="Add",tvectors=wonderland),
+neighbors(compose("mad","hatter",method="Add",tvectors=wonderland),
 n=20,tvectors=wonderland)}

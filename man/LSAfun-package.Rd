@@ -13,7 +13,7 @@ Such a representation allows for the computation of word (and document) similari
 This package is not designed to create LSA semantic spaces; this is the focus of the R-package \code{\link[lsa]{lsa}}. Instead, it provides functions to be applied on existing LSA semantic spaces, such as
 \enumerate{
 \item{Similarity Computations}
-\item{Neighbourhood Computations}
+\item{neighborhood Computations}
 \item{Applied Functions}
 \item{Composition Methods}
 }

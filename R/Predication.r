@@ -8,7 +8,7 @@ print.Pred <- function(obj){
   cat("Input: Predicate    ", obj$P,"    Argument:    ", obj$A, "\n\n")
   cat("Predication Vector ($PA):\n ",(obj$PA), "\n\n")
   cat("Predicate Vector without Argument ($P.Pred):\n ",(obj$P.Pred), "\n\n")
-  cat("Used neighbourhood words ($neighbours):\n", obj$neighbours, "\n")
+  cat("Used neighborhood words ($neighbors):\n", obj$neighbors, "\n")
   invisible(obj)
 }
 
@@ -34,7 +34,7 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE,norm="none"){
     # m nearest types to P
     
     
-    near.P <- neighbours(P,(m+1),tvectors=tvectors,
+    near.P <- neighbors(P,(m+1),tvectors=tvectors,
                          breakdown=breakdown)[2:(m+1)]   
     
     
@@ -46,7 +46,7 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE,norm="none"){
     near.PA <- sort(near.PA,decreasing=T)[1:k]
     
     
-    neighbours <- names(near.PA)
+    neighbors <- names(near.PA)
     tvectors_PA <- tvectors[names(near.PA),]
     
     
@@ -96,7 +96,7 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE,norm="none"){
     
     
     
-    out <- list(PA=PA,P.Pred=P.Pred,neighbours=neighbours,P=P,A=A)
+    out <- list(PA=PA,P.Pred=P.Pred,neighbors=neighbors,P=P,A=A)
     
     class(out) <- "Pred"
     out

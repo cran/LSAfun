@@ -6,7 +6,7 @@
 \description{Computes cosines between a sentence/ document and multiple words}
 
 \details{
-The format of \code{x} (or \code{y}) can be of the kind \code{x <- "word1 word2 word3"} , but also of the kind \code{x <- c("word1", "word2", "word3")}. This allows for simple copy&paste-inserting of text, but also for using character vectors, e.g. the output of \code{\link[LSAfun]{neighbours}}.\cr
+The format of \code{x} (or \code{y}) can be of the kind \code{x <- "word1 word2 word3"} , but also of the kind \code{x <- c("word1", "word2", "word3")}. This allows for simple copy&paste-inserting of text, but also for using character vectors, e.g. the output of \code{\link[LSAfun]{neighbors}}.\cr
 Both x and y can also just consist of one single word.
 For computing the vector for the document/ sentence specified in \code{x}, the simple Addition model is used (see \code{\link[LSAfun]{costring}}).
 }
@@ -48,5 +48,5 @@ multicostring("Alice was beginning to get very tired.",
         tvectors=wonderland)
 
 multicostring("Suddenly, a cat appeared in the woods",
-names(neighbours("cheshire",n=20,tvectors=wonderland)), 
+names(neighbors("cheshire",n=20,tvectors=wonderland)), 
 tvectors=wonderland)}

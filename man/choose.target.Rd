@@ -31,7 +31,7 @@ This function is designed for randomly selecting target words with a predefined 
 \seealso{
   \code{\link[lsa]{cosine}},
   \code{\link[LSAfun]{Cosine}},
-  \code{\link[LSAfun]{neighbours}}
+  \code{\link[LSAfun]{neighbors}}
 
 }
 

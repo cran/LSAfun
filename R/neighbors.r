@@ -1,10 +1,10 @@
-##### Neighbours
+##### Neighbors
 
 ### Function
 
 #' @export
 #' @importFrom lsa cosine
-neighbours <- function(x,n,tvectors=tvectors,breakdown=TRUE){
+neighbors <- function(x,n,tvectors=tvectors,breakdown=TRUE){
   
   if(class(tvectors) == "matrix"){
     

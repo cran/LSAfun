@@ -13,7 +13,7 @@ plot_wordlist <- function(x,connect.lines=0,
                             tvectors=tvectors,breakdown=TRUE,
                             ...){
   
-  ### Compute neighbours
+  ### Compute neighbors
   
   if(!(dims %in% 2:3)){stop("Please set dim to 2 or 3")}
   
@@ -75,11 +75,12 @@ plot_wordlist <- function(x,connect.lines=0,
     
     ## Plot 2d
     
+    if(dims == 2){
     plot(Lt$x,Lt$y,xlab="Dimension 1",ylab="Dimension 2",pch=20,type="n",
-         xlim=c(min(Lt$x)-0.1,max(Lt$x)+0.1),ylim=c(min(Lt$y)-0.1,max(Lt$y)+0.1),...)
+         xlim=c(min(Lt$x)-0.1,max(Lt$x)+0.1),ylim=c(min(Lt$y)-0.1,max(Lt$y)+0.1))
     with(Lt,points(x,y,cex=.6,pch=20))
     with(Lt,text(x,y,words2,cex=.6))
-    
+    }
     
     
     ## Plot 3d
@@ -211,6 +212,8 @@ plot_wordlist <- function(x,connect.lines=0,
       
           
     }
+    
+    Lt[,-which(colnames(Lt) %in% c("words","words2"))]
     
   }else{warning("tvectors must be a matrix!")}
 }

@@ -31,7 +31,7 @@ compose(x,y,method="Add", a=1,b=1,c=1,m,k,tvectors=tvectors,
   \item{y}{a single word (character vector with \code{length(y) = 1)}}
   \item{a,b,c}{weighting parameters, see \emph{Details}}
   \item{m}{number of nearest words to the Predicate that are initially activated (see \code{\link[LSAfun]{Predication}})}
-  \item{k}{size of the \code{k}-neighbourhood; \code{k} \eqn{\le} \code{m} (see \code{\link[LSAfun]{Predication}})}
+  \item{k}{size of the \code{k}-neighborhood; \code{k} \eqn{\le} \code{m} (see \code{\link[LSAfun]{Predication}})}
   \item{method}{the composition method to be used (see \emph{Details})}
   \item{norm}{whether to \code{\link[LSAfun]{normalize}} the single word vectors before applying a composition function. Setting \code{norm = "none"} will not perform any normalizations, setting \code{norm = "all"} will normalize every involved word vector. Setting \code{norm = "block"} is only valid for the \code{\link[LSAfun]{Predication}} method}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
