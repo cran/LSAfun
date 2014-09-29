@@ -13,6 +13,13 @@ multicostring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
       
     }
     
+    if(breakdown==TRUE){
+      
+      satz1 <- x
+      y     <- y
+      
+    }
+    
     ### turn x into a single vector (added vectors of elements)
     
     if(length(satz1) == 1){

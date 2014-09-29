@@ -11,6 +11,7 @@ choose.target <- function(x,lower,upper,n,tvectors=tvectors,
     allwords <- vector(length=nrow(tvectors))
     
     if(breakdown==TRUE){satz1 <- breakdown(x)}
+    if(breakdown==TRUE){satz1 <- x}
     
     satz1split <- strsplit(satz1,split=" ")[[1]]
     

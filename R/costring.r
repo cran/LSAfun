@@ -14,6 +14,13 @@ costring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
       
     }
     
+    if(breakdown==FALSE){
+      
+      satz1 <- x
+      satz2 <- y
+      
+    }
+    
     
     if(length(satz1) == 1){
       satz1split <- strsplit(satz1,split=" ")[[1]]

@@ -7,8 +7,8 @@
 
 \details{
 Computes all the cosines between a given sentence/document or word and multiple answer options. Then
-selects the nearest option to the input (the option with the highest cosine).\cr
-This function relies entirely on the \code{\link[LSAfun]{costring}} function.
+selects the nearest option to the input (the option with the highest cosine).This function relies entirely on the \code{\link[LSAfun]{costring}} function.\cr
+A warning message will be displayed if all words of one answer alternative are not found in the semantic space.
 
 }
 

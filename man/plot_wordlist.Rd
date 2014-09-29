@@ -13,7 +13,8 @@ For creating pretty plots showing the similarity structure within this list of w
 }
 
 \usage{plot_wordlist(x,connect.lines=0,method="PCA",dims=3,
- axes=F,box=F,alpha=0.5,col="black",tvectors=tvectors,breakdown=TRUE,\dots)}
+   axes=F,box=F,cex=1,alpha=0.5,col="black",
+   tvectors=tvectors,breakdown=TRUE,\dots)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) > 1} that contains multiple words}
@@ -22,6 +23,7 @@ For creating pretty plots showing the similarity structure within this list of w
   \item{connect.lines}{(3d plot only) the number of closest associate words each word is connected with via line. Setting \code{connect.lines="all"} will draw all connecting lines and will automatically apply \code{alpha="shade"}; it will furthermore override the \code{start.lines} argument}
   \item{axes}{(3d plot only) whether axes shall be included in the plot}
   \item{box}{(3d plot only) whether a box shall be drawn around the plot}
+  \item{cex}{(2d Plot only) A numerical value giving the amount by which plotting text should be magnified relative to the default.}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
   \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
   \item{alpha}{(3d plot only) a vector of one or two numerics between 0 and 1 specifying the luminance of \code{start.lines} (first entry) and \code{connect.lines} (second entry). Specifying only one numeric will pass this value to both kinds of lines. With setting \code{alpha="shade"}, the luminance of every line will be adjusted to the cosine between the two words it connects.}

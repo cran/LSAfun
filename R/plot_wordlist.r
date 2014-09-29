@@ -8,7 +8,7 @@
 #' 
 plot_wordlist <- function(x,connect.lines=0,
                           method="PCA",dims=3,
-                            axes=F,box=F,
+                            axes=F,box=F,cex=1,
                             alpha=.5, col="black", 
                             tvectors=tvectors,breakdown=TRUE,
                             ...){
@@ -21,7 +21,8 @@ plot_wordlist <- function(x,connect.lines=0,
     
     if(class(x) == "character"){
       
-      if(breakdown==TRUE){satz1 <- breakdown(x)}  
+      if(breakdown==TRUE){satz1 <- breakdown(x)} 
+      if(breakdown==TRUE){satz1 <- x}  
       
       used1      <- satz1[satz1 %in% rownames(tvectors)]
       
@@ -79,7 +80,7 @@ plot_wordlist <- function(x,connect.lines=0,
     plot(Lt$x,Lt$y,xlab="Dimension 1",ylab="Dimension 2",pch=20,type="n",
          xlim=c(min(Lt$x)-0.1,max(Lt$x)+0.1),ylim=c(min(Lt$y)-0.1,max(Lt$y)+0.1))
     with(Lt,points(x,y,cex=.6,pch=20))
-    with(Lt,text(x,y,words2,cex=.6))
+    with(Lt,text(x,y,words2,cex=cex))
     }
     
     

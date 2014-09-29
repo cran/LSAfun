@@ -1,14 +1,19 @@
 
 #' @export
 MultipleChoice <- function(x,y,tvectors=tvectors,breakdown=TRUE){
-  
-  
+
+ 
   cos <- vector(length=length(y))
   names(cos) <- y
   
-  for(i in 1:length(y)){cos[i] <- costring(x,y[i],
+  for(j in 1:length(y)){value <- costring(x,y[j],
                                            tvectors=tvectors,
-                                           breakdown=breakdown)}
+                                           breakdown=breakdown)
+  
+  if(is.na(value)){cos[j] <- -2}
+  if(!is.na(value)){cos[j] <- value}                      
+                        
+  }
   
   
   names(cos)[which(cos == max(cos))]
