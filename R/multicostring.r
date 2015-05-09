@@ -13,7 +13,7 @@ multicostring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
       
     }
     
-    if(breakdown==TRUE){
+    if(breakdown==FALSE){
       
       satz1 <- x
       y     <- y

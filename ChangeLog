@@ -1,3 +1,21 @@
+[version 0.4] ChangeLog
+
+(1) Added asymmetric similarity functions
+    (1.1) The asym() function, containing various functions for computing 
+	      "category-inclusion" (hypernymy) similarities, and the SIM function
+		  proposed by Kintsch (2014)
+	(1.1) Similarity-in-context function conSIM() according to Kintsch (2014)
+
+(2) Added function for distances between vectors with the distance() function, 
+    including the Euclidean Distance and City Block Distance
+	
+(3) Added measures for plausibility/ semantic transparency of vectors 
+    with the plausibility() function
+	
+(4) Extended the compose() function by including method="CConv" and method="Dilation"
+	
+	
+
 [version 0.3.2] ChangeLog
 
 (1) Made MultipleChoice() more adaptive if one answer alternative cannot be found

@@ -1,14 +1,12 @@
 \name{Cosine}
 \alias{Cosine}
-\title{Compute LSA cosine}
+\title{Compute cosine similarity}
 \encoding{latin1}
 
-\description{Computes the cosine for two single words}
+\description{Computes the cosine similarity for two single words}
 
-\details{Instead of using numeric vectors, as the \code{cosine()} function from the \emph{lsa} package does, this
-function allows for the direct computation of the cosine between two single words (i.e. Characters). which are
-automatically searched for in the LSA space given in as \code{tvectors}.
-}
+\details{Instead of using numeric vectors, as the \code{cosine()} function from the lsa package does, this function allows for the direct computation of the cosine between two single words (i.e. Characters). which are automatically searched for in the LSA space given in as \code{tvectors}.}
+
 
 \usage{Cosine(x,y,tvectors=tvectors,breakdown=TRUE)}
 
@@ -19,13 +17,14 @@ automatically searched for in the LSA space given in as \code{tvectors}.
   \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
 
 }
-\value{The cosine as a numeric}
+\value{The cosine similarity as a numeric}
 
 \author{
   Fritz Günther
 }
 \seealso{
-  \code{\link[lsa]{cosine}}
+  \code{\link[LSAfun]{distance}}
+  \code{\link[LSAfun]{asym}}
   
 }
 

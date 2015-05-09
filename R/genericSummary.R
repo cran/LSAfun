@@ -31,7 +31,13 @@ genericSummary <- function(text,k,split=c(".","!","?"),min=5,breakdown=TRUE,...)
   ## Construct the terms by sentences matrix A for the
   ## document D
   
-  A <- textmatrix(td,...)
+  A        <- textmatrix(td,...)
+  rownames <- rownames(A)
+  colnames <- colnames(A)
+  
+  A           <- matrix(A,nrow=nrow(A),ncol=ncol(A))
+  rownames(A) <- rownames
+  colnames(A) <- colnames
   
   ## delete files again
   

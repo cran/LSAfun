@@ -1,9 +1,8 @@
 ##### Two-Word Composition #####################
 
 #' @export
-compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,
-                    tvectors=tvectors,breakdown=TRUE,
-                    norm="none"){
+compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,lambda=2,
+                    tvectors=tvectors,breakdown=TRUE,norm="none"){
   
   if(class(tvectors) == "matrix"){
     
@@ -78,6 +77,50 @@ compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,
 
     }
     
+    
+    if(method=="CConv"){
+      
+      if(norm=="block"){warning("Blocked normalization not defined for this composition method")}
+      
+      if(norm=="none"){
+        v <- tvectors[x,]
+        w <- tvectors[y,]
+      }
+      
+      if(norm=="all"){
+        v <- normalize(tvectors[x,])
+        w <- normalize(tvectors[y,])
+      }
+      
+      ## create convolution
+      conv <- convolve(v, w, conj = FALSE, type="circular")  
+      
+      ## re-arrange so it fits the formula
+      comp <- c(conv[length(conv)],conv[1:(length(conv)-1)])
+      
+    }
+    
+    
+    
+    if(method=="Dilation"){
+      
+      if(norm=="block"){warning("Blocked normalization not defined for this composition method")}
+      
+      if(norm=="none"){
+        v <- tvectors[x,]
+        w <- tvectors[y,]
+      }
+      
+      if(norm=="all"){
+        v <- normalize(tvectors[x,])
+        w <- normalize(tvectors[y,])
+      }
+      
+      
+      comp <- (v%*%v)*w + (lambda-1)*(v%*%w)*v
+            
+    }
+    
   
   
   if(!x %in% rownames(tvectors)){
@@ -90,7 +133,7 @@ compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,
     return(NA)
   }
   
-  comp
+  return(comp)
   
 }else{
   stop("tvectors must be a matrix!")

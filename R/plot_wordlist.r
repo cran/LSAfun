@@ -22,7 +22,7 @@ plot_wordlist <- function(x,connect.lines=0,
     if(class(x) == "character"){
       
       if(breakdown==TRUE){satz1 <- breakdown(x)} 
-      if(breakdown==TRUE){satz1 <- x}  
+      if(breakdown==FALSE){satz1 <- x}  
       
       used1      <- satz1[satz1 %in% rownames(tvectors)]
       

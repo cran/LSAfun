@@ -6,7 +6,7 @@
 \description{Returns the n nearest words to a given word or sentence/document}
 
 \details{
-The format of \code{x} should be of the kind \code{x <- "word1 word2 word3"} instead of
+The format of \code{x} should be of the kind \code{x <- "word1 word2 word3"} instead of \cr
 \code{x <- c("word1", "word2", "word3")} if sentences/documents are used as input. This allows for simple copy&paste-inserting of text.\cr\cr
 To import a document \emph{Document.txt} to from a directory for comparisons, set your working
 directory to this directory using \code{setwd()}. Then use the following command lines:\cr

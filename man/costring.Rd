@@ -7,7 +7,7 @@
 
 \details{
 In the traditional LSA approach, the vector \emph{D} for a document (or a sentence) consisting of the words \emph{(t1, . , tn)} is computed as
-             \deqn{D = \sum{i=1}^{n} t_n}
+             \deqn{D = \sum\limits_{i=1}^n t_n}
              
 This function computes the cosine between two documents (or sentences) or the cosine between a single word and a document (or sentence).\cr\cr
      The format of \code{x} (or \code{y}) can be of the kind \code{x <- "word1 word2 word3"} , but also of the kind \code{x <- c("word1", "word2", "word3")}. This allows for simple copy&paste-inserting of text,

@@ -22,7 +22,7 @@ plot_neighbors <- function(x,n,connect.lines=0,
     if(class(x) == "character"){
       
       if(breakdown==TRUE){satz1 <- breakdown(x)}  
-      if(breakdown==TRUE){satz1 <- x}  
+      if(breakdown==FALSE){satz1 <- x}  
       
       satz1split <- strsplit(satz1,split=" ")[[1]]
       used1      <- satz1split[satz1split %in% rownames(tvectors)]
