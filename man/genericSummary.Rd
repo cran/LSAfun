@@ -28,7 +28,7 @@ eration; otherwise, increment \emph{k} by one, and go to Step
 }
 
 
-\usage{genericSummary(text,k,split=c(".","!","?"),min=5,breakdown=TRUE,...)}
+\usage{genericSummary(text,k,split=c(".","!","?"),min=5,breakdown=FALSE,...)}
 
 \arguments{
   \item{text}{A character vector of \code{length(text) = 1} specifiying the text to be summarized}

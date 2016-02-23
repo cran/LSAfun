@@ -37,7 +37,7 @@ On the other hand, \code{WeightAdd, Combined, Predication} and \code{Dilation} a
 \usage{
 ## Default 
 compose(x,y,method="Add", a=1,b=1,c=1,m,k,lambda=2,
-      tvectors=tvectors,breakdown=TRUE, norm="none")}
+      tvectors=tvectors,breakdown=FALSE, norm="none")}
 
 \arguments{
   \item{x}{a single word (character vector with \code{length(x) = 1)}}

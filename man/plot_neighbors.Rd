@@ -20,7 +20,7 @@ For creating pretty plots showing the similarity structure within this neighborh
 
 \usage{plot_neighbors(x,n,connect.lines=0,start.lines=T,
    method="PCA",dims=3,axes=F,box=F,cex=1,alpha=0.5,
-   col="black",tvectors=tvectors,breakdown=TRUE,\dots)}
+   col="black",tvectors=tvectors,breakdown=FALSE,\dots)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} or a numeric of \code{length=ncol(tvectors)} vector with same dimensionality as LSA space}

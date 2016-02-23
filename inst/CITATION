@@ -1,0 +1,23 @@
+bibentry(bibtype = "Article",
+  title        = "LSAfun: An R package for computations based on Latent Semantic Analysis",
+  author       = c(person(given = "Fritz",
+                          family = "G{\\\"u}nther"),
+                   person(given = "Carolin",
+                          family = "Dudschig"),
+                   person(given = "Barbara",
+                          family = "Kaup")),
+  journal      = "Behavior Research Methods",
+  year         = "2015",
+  volume       = "47",
+  number       = "4",
+  pages        = "930--944",
+  doi          = "10.3758/s13428-014-0529-0",
+
+  header       = "To cite LSAfun in publications use:",
+  textVersion  =
+  paste("Guenther, F., Dudschig, C., & Kaup, B. (2015).",
+        "LSAfun: An R package for computations based on Latent Semantic Analysis.",
+        "Behavior Research Methods, 47(4), 930--944.",
+        "doi:10.3758/s13428-014-0529-0.")
+)
+

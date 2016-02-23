@@ -14,7 +14,7 @@ For creating pretty plots showing the similarity structure within this list of w
 
 \usage{plot_wordlist(x,connect.lines=0,method="PCA",dims=3,
    axes=F,box=F,cex=1,alpha=0.5,col="black",
-   tvectors=tvectors,breakdown=TRUE,\dots)}
+   tvectors=tvectors,breakdown=FALSE,\dots)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) > 1} that contains multiple words}

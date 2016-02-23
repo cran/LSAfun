@@ -10,7 +10,7 @@ plot_neighbors <- function(x,n,connect.lines=0,
                             start.lines=T,method="PCA",dims=3,
                             axes=F,box=F,cex=1,
                             alpha=.5, col="black", 
-                            tvectors=tvectors,breakdown=TRUE,
+                            tvectors=tvectors,breakdown=FALSE,
                             ...){
   
   ### Compute neighbors

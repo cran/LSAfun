@@ -16,7 +16,7 @@ Since \code{x} can also be chosen to be any vector of the active LSA Space, this
 combined with \code{compose()} to compute neighbors of complex expressions (see examples)
 }
 
-\usage{neighbors(x,n,tvectors=tvectors,breakdown=TRUE)}
+\usage{neighbors(x,n,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} or a numeric of \code{length=ncol(tvectors)} vector with same dimensionality as LSA space}

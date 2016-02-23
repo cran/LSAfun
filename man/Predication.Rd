@@ -12,7 +12,7 @@ the Argument are selected. The vector for the expression is then computed as the
 Predicate vector, Argument vector, and the vectors of those \code{k} neighbors (the \code{k}-neighborhood).
 }
 
-\usage{Predication(P,A,m,k,tvectors=tvectors,breakdown=TRUE,norm="none")}
+\usage{Predication(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none")}
 
 \arguments{
   \item{P}{Predicate of the expression, a single word (character vector)}

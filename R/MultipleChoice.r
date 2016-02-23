@@ -1,6 +1,6 @@
 
 #' @export
-MultipleChoice <- function(x,y,tvectors=tvectors,breakdown=TRUE){
+MultipleChoice <- function(x,y,tvectors=tvectors,breakdown=FALSE){
 
  
   cos <- vector(length=length(y))

@@ -2,7 +2,7 @@
 
 #' @export
 compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,lambda=2,
-                    tvectors=tvectors,breakdown=TRUE,norm="none"){
+                    tvectors=tvectors,breakdown=FALSE,norm="none"){
   
   if(class(tvectors) == "matrix"){
     

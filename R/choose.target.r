@@ -4,7 +4,7 @@
 #' @importFrom lsa cosine 
 
 choose.target <- function(x,lower,upper,n,tvectors=tvectors,
-                          breakdown=TRUE){
+                          breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){ 
     

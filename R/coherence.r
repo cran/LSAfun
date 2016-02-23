@@ -2,7 +2,7 @@
 
 #' @export
 coherence <- function(x,split=c(".","!","?"),tvectors=tvectors,
-                      breakdown=TRUE){
+                      breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     

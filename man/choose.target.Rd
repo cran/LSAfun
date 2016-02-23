@@ -10,7 +10,7 @@ Computes cosine values between the input \code{x} and all the word vectors in \c
 This function is designed for randomly selecting target words with a predefined similarity towards a given prime word (or sentence/document).
 }
 
-\usage{choose.target(x,lower,upper,n,tvectors=tvectors,breakdown=TRUE)}
+\usage{choose.target(x,lower,upper,n,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} specifying a word or a sentence/document}

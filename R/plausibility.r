@@ -5,7 +5,7 @@
 #' @export
 #' @importFrom lsa cosine
 
-plausibility <- function(x,method,n=10,stem,tvectors=tvectors,breakdown=TRUE){
+plausibility <- function(x,method,n=10,stem,tvectors=tvectors,breakdown=FALSE){
   
   
   if(class(tvectors) == "matrix"){
@@ -93,13 +93,16 @@ plausibility <- function(x,method,n=10,stem,tvectors=tvectors,breakdown=TRUE){
       if(method == "entropy"){
         
         if(any(satz1vec < 0)){
-          satz1vec <- satz1vec[satz1vec >= 0]
           warning("negative values in x detected and omitted. Results will be flawed!")
         }
           
           K <- length(satz1vec)
+        
+          ## exclude zeros 
           
-          entropy <- log(K) - (sum(satz1vec*log(satz1vec))) / K
+          satz1vec_pos <- satz1vec[satz1vec > 0]
+          
+          entropy <- log(K) - (sum(satz1vec_pos*log(satz1vec_pos))) / K
           return(entropy)        
         
       }

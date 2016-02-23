@@ -11,7 +11,7 @@ Both x and y can also just consist of one single word.
 For computing the vector for the document/ sentence specified in \code{x}, the simple Addition model is used (see \code{\link[LSAfun]{costring}}).
 }
 
-\usage{multicostring(x,y,tvectors=tvectors,breakdown=TRUE)}
+\usage{multicostring(x,y,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector specifying a sentence/ document (or also a single word)}

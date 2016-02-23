@@ -3,7 +3,7 @@
 #' @export
 #' @importFrom lsa cosine 
  
-costring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
+costring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     

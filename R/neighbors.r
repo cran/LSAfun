@@ -4,7 +4,7 @@
 
 #' @export
 #' @importFrom lsa cosine
-neighbors <- function(x,n,tvectors=tvectors,breakdown=TRUE){
+neighbors <- function(x,n,tvectors=tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     

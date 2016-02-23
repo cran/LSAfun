@@ -1,3 +1,17 @@
+[version 0.5] ChangeLog
+
+(1) Set breakdown=FALSE as default for all functions (instead of breakdown=TRUE)
+
+(2) Added the function pairwise()
+
+(3) Added a new CITATION file, citing the LSAfun journal article
+
+
+[version 0.4.1] ChangeLog
+
+(1) Corrected a wrong formula that caused asym() to give wrong values for
+    method="clarkede" and method ="invcl"
+
 [version 0.4] ChangeLog
 
 (1) Added asymmetric similarity functions
@@ -20,7 +34,7 @@
 
 (1) Made MultipleChoice() more adaptive if one answer alternative cannot be found
 
-(2) Added cex parameter for plot_wordlist and plot_neighbors
+(2) Added cex parameter for plot_wordlist() and plot_neighbors()
 
 
 
@@ -31,10 +45,10 @@
 (2) Changed function names: neighbours() to neighbors()
                             plot_neighbours() to plot_neighbors()
 
-(3) Updates for plot_neighbors and plot_wordlist
-	(3.1) Changed a bug in plot_neighbors and plot_wordlist that always plotted 
+(3) Updates for plot_neighbors() and plot_wordlist()
+	(3.1) Changed a bug in plot_neighbors() and plot_wordlist() that always plotted 
 		  two- as well as three-dimensional plots
-	(3.2) plot_neighbors and plot_wordlist now also give the coordinates for
+	(3.2) plot_neighbors() and plot_wordlist() now also give the coordinates for
 		  the words in the plot as a data frame (default output)
 
 		  
@@ -43,9 +57,9 @@
 
 (1) Modifications for breakdown(), can now deal with more special characters  
 
-(2) Added the argument "method" and the argument "dims" to plot_neighbours
+(2) Added the argument "method" and the argument "dims" to plot_neighbours()
 
-(3) Added the function plot_wordlist
+(3) Added the function plot_wordlist()
 
 
 

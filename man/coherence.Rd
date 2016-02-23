@@ -17,7 +17,7 @@ directory to this directory using \code{setwd()}. Then use the following command
 
 }
 
-\usage{coherence(x,split=c(".","!","?"),tvectors=tvectors,breakdown=TRUE)}
+\usage{coherence(x,split=c(".","!","?"),tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} containing the document}

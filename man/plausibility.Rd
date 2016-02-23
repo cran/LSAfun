@@ -21,7 +21,7 @@ The methods are defined as follows:
 }
 }
 
-\usage{plausibility(x,method, n=10,stem,tvectors=tvectors,breakdown=TRUE)}
+\usage{plausibility(x,method, n=10,stem,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} or a numeric of \code{length=ncol(tvectors)} vector with same dimensionality as LSA space}

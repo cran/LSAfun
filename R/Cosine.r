@@ -3,7 +3,7 @@
 #' @export
 #' @importFrom lsa cosine 
 
-Cosine <- function(x,y,tvectors=tvectors,breakdown=TRUE){
+Cosine <- function(x,y,tvectors=tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     

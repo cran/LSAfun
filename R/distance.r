@@ -2,7 +2,7 @@
 
 #' @export
 
-distance <- function(x,y,method="euclidean",tvectors=tvectors,breakdown=TRUE){
+distance <- function(x,y,method="euclidean",tvectors=tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     

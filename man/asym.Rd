@@ -33,7 +33,7 @@ Unlike the other  methods, this one is not derived from the logic of hypernymy, 
 
 
 
-\usage{asym(x,y,method,t=0,tvectors,breakdown=TRUE)}
+\usage{asym(x,y,method,t=0,tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{A single word, given as a character of \code{length(x) = 1}}

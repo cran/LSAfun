@@ -15,7 +15,7 @@ print.Pred <- function(obj){
 # Function
 
 #' @export
-Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=TRUE,norm="none"){
+Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
   
   if(class(tvectors) == "matrix"){
     

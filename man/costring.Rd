@@ -18,7 +18,7 @@ directory to this directory using \code{setwd()}. Then use the following command
 \code{x <- readChar(fileName1, file.info(fileName1)$size)}
 }
 
-\usage{costring(x,y,tvectors=tvectors,breakdown=TRUE)}
+\usage{costring(x,y,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector}

@@ -2,7 +2,7 @@
 
 #' @export
 
-conSIM <- function(x,y,z,c,tvectors=tvectors,breakdown=TRUE){
+conSIM <- function(x,y,z,c,tvectors=tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     

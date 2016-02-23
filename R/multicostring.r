@@ -2,7 +2,7 @@
 
 #' @export
 #' @importFrom lsa cosine
-multicostring <- function(x,y,tvectors=tvectors,breakdown=TRUE){
+multicostring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     

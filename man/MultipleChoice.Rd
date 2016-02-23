@@ -12,7 +12,7 @@ A warning message will be displayed if all words of one answer alternative are n
 
 }
 
-\usage{MultipleChoice(x,y,tvectors=tvectors,breakdown=TRUE)}
+\usage{MultipleChoice(x,y,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} specifying a sentence/ document (or also a single word)}

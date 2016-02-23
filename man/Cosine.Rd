@@ -8,7 +8,7 @@
 \details{Instead of using numeric vectors, as the \code{cosine()} function from the lsa package does, this function allows for the direct computation of the cosine between two single words (i.e. Characters). which are automatically searched for in the LSA space given in as \code{tvectors}.}
 
 
-\usage{Cosine(x,y,tvectors=tvectors,breakdown=TRUE)}
+\usage{Cosine(x,y,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{A single word, given as a character of \code{length(x) = 1}}

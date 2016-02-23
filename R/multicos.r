@@ -2,7 +2,7 @@
 
 #' @export
 #' @importFrom lsa cosine
-multicos <- function(x,y=x,tvectors=tvectors,breakdown=TRUE){
+multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     

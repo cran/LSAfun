@@ -8,7 +8,7 @@
 \details{Following the example from Kintsch (2014): If one has to judge the similarity between \emph{France} one the one hand and the test words \emph{Germany} and \emph{Spain} on the other hand, this similarity judgement varies as a function of a fourth context word. If \emph{Portugal} is given as a context word, \emph{France} is considered to be more similar to \emph{Germany} than to \emph{Spain}, and vice versa for the context word \emph{Poland}. Kintsch (2014) proposed a context sensitive, asymmetrical similarity measure for cases like this, which is implemented here
 }
 
-\usage{conSIM(x,y,z,c,tvectors=tvectors,breakdown=TRUE)}
+\usage{conSIM(x,y,z,c,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{The relevant word, given as a character of \code{length(x) = 1}}

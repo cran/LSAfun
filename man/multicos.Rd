@@ -13,7 +13,7 @@ Also allows for computation of cosines between a given numeric vector with the s
 dimensionality as the LSA space and a vector consisting of n words.
 }
 
-\usage{multicos(x,y=x,tvectors=tvectors,breakdown=TRUE)}
+\usage{multicos(x,y=x,tvectors=tvectors,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector or numeric of \code{length=ncol(tvectors)}

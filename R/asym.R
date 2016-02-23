@@ -2,7 +2,7 @@
 
 #' @export
 
-asym <- function(x,y,method,t=0,tvectors,breakdown=TRUE){
+asym <- function(x,y,method,t=0,tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     
@@ -126,7 +126,7 @@ asym <- function(x,y,method,t=0,tvectors,breakdown=TRUE){
         av   <- v[active_vw]
         aw   <- w[active_vw]
         list <- data.frame(av,aw)
-        mins <- apply(list,2,min)
+        mins <- apply(list,1,min)
         
         clarkede <- sum(mins)/sum(v[active_v])
         return(clarkede)
@@ -166,7 +166,7 @@ asym <- function(x,y,method,t=0,tvectors,breakdown=TRUE){
         av   <- v[active_vw]
         aw   <- w[active_vw]
         list <- data.frame(av,aw)
-        mins <- apply(list,2,min)
+        mins <- apply(list,1,min)
         
         clarkede <- sum(mins)/sum(v[active_v])
         
