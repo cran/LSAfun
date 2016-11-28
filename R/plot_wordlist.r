@@ -5,6 +5,13 @@
 #' @importFrom rgl plot3d
 #' @importFrom rgl text3d
 #' @importFrom rgl segments3d
+#' @importFrom grDevices rainbow
+#' @importFrom graphics plot
+#' @importFrom stats cmdscale
+#' @importFrom stats loadings
+#' @importFrom stats princomp
+#' @importFrom stats varimax
+#' @importFrom utils combn
 #' 
 plot_wordlist <- function(x,connect.lines=0,
                           method="PCA",dims=3,
@@ -16,6 +23,14 @@ plot_wordlist <- function(x,connect.lines=0,
   ### Compute neighbors
   
   if(!(dims %in% 2:3)){stop("Please set dim to 2 or 3")}
+  
+  if(class(tvectors) == "data.frame"){
+    tvectors <- as.matrix(tvectors)
+  }else if(class(tvectors) == "textmatrix"){
+    tvectors <- matrix(tvectors,
+                       nrow=nrow(tvectors),ncol=ncol(tvectors),
+                       dimnames=list(rownames(tvectors),colnames(tvectors)))
+  }
   
   if(class(tvectors) == "matrix"){
     

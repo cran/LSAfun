@@ -1,8 +1,18 @@
 ##### Two-Word Composition #####################
 
 #' @export
+#' @importFrom stats convolve
+#' 
 compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,lambda=2,
                     tvectors=tvectors,breakdown=FALSE,norm="none"){
+  
+  if(class(tvectors) == "data.frame"){
+    tvectors <- as.matrix(tvectors)
+  }else if(class(tvectors) == "textmatrix"){
+    tvectors <- matrix(tvectors,
+                       nrow=nrow(tvectors),ncol=ncol(tvectors),
+                       dimnames=list(rownames(tvectors),colnames(tvectors)))
+  }
   
   if(class(tvectors) == "matrix"){
     

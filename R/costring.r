@@ -5,6 +5,14 @@
  
 costring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
   
+  if(class(tvectors) == "data.frame"){
+    tvectors <- as.matrix(tvectors)
+  }else if(class(tvectors) == "textmatrix"){
+    tvectors <- matrix(tvectors,
+                       nrow=nrow(tvectors),ncol=ncol(tvectors),
+                       dimnames=list(rownames(tvectors),colnames(tvectors)))
+  }
+  
   if(class(tvectors) == "matrix"){
     
     if(breakdown==TRUE){
