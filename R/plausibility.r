@@ -17,6 +17,12 @@ plausibility <- function(x,method,n=10,stem,tvectors=tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     
+    if(class(x) == "factor"){
+      x <- as.character(x)
+      message("Note: x converted to character")
+    }
+
+    
     if(class(x) == "character"){
       
       if(breakdown==TRUE){satz1 <- breakdown(x)}  

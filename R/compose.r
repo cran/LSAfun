@@ -16,6 +16,16 @@ compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,lambda=2,
   
   if(class(tvectors) == "matrix"){
     
+    if(class(x) != "character"){
+      x <- as.character(x)
+      message("Note: x converted to character")
+    }
+    
+    if(class(y) != "character"){
+      y <- as.character(y)
+      message("Note: y converted to character")
+    }
+    
     if(breakdown==TRUE){
       
       x <- breakdown(x)

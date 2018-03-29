@@ -14,6 +14,12 @@ coherence <- function(x,split=c(".","!","?"),tvectors=tvectors,
   
   if(class(tvectors) == "matrix"){
     
+    if(class(x) != "character"){
+      x <- as.character(x)
+      message("Note: x converted to character")
+    }
+    
+
     sentences <- x
     
     for(i in 1:length(split)){

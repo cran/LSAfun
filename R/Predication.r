@@ -29,6 +29,16 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
     
     if(breakdown==TRUE){
       
+      if(class(P) != "character"){
+        P <- as.character(P)
+        message("Note: P converted to character")
+      }
+      
+      if(class(A) != "character"){
+        A <- as.character(A)
+        message("Note: A converted to character")
+      }
+      
       P <- breakdown(P)
       A <- breakdown(A)
       

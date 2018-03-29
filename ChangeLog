@@ -1,3 +1,10 @@
+[version 0.5.2] ChangeLog
+
+(1) All functions that want to use character vectors now automatically try to convert
+    the input to characters using as.character(). They inform the user with the message
+	"Note: x converted to character" when doing so.
+
+
 [version 0.5.1] ChangeLog
 
 (1) All functions relying on a specification of a tvectors argument can now not

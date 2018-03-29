@@ -16,6 +16,11 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
     
     ## handle x
     
+    if(class(x) == "factor"){
+      x <- as.character(x)
+      message("Note: x converted to character")
+    }
+    
     if(class(x)=="character"){
       
       if(breakdown==TRUE){x <- breakdown(x)}
@@ -43,6 +48,12 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
     }
     
     ## handle y
+    
+    
+    if(class(y) == "factor"){
+      y <- as.character(y)
+      message("Note: y converted to character")
+    }
     
     if(breakdown==TRUE){y <- breakdown(y)}
     

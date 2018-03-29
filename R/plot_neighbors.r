@@ -34,6 +34,12 @@ plot_neighbors <- function(x,n,connect.lines=0,
   
   if(class(tvectors) == "matrix"){
     
+    if(class(x) == "factor"){
+      x <- as.character(x)
+      message("Note: x converted to character")
+    }
+    
+    
     if(class(x) == "character"){
       
       if(breakdown==TRUE){satz1 <- breakdown(x)}  

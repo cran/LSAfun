@@ -14,6 +14,16 @@ asym <- function(x,y,method,t=0,tvectors,breakdown=FALSE){
   
   if(class(tvectors) == "matrix"){
     
+    if(class(x) != "character"){
+      x <- as.character(x)
+      message("Note: x converted to character")
+    }
+    
+    if(class(y) != "character"){
+      y <- as.character(y)
+      message("Note: y converted to character")
+    }
+    
     if(breakdown==TRUE){
       
       x <- breakdown(x)      

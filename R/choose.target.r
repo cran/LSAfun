@@ -16,6 +16,12 @@ choose.target <- function(x,lower,upper,n,tvectors=tvectors,
   
   if(class(tvectors) == "matrix"){ 
     
+    if(class(x) != "character"){
+      x <- as.character(x)
+      message("Note: x converted to character")
+    }
+    
+
     allwords <- vector(length=nrow(tvectors))
     
     if(breakdown==TRUE){satz1 <- breakdown(x)}
