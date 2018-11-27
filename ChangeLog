@@ -1,3 +1,13 @@
+[version 0.5.3] ChangeLog
+
+(1) Fixed a bug where the distance() function returned NULL values for the "euclidean" option
+
+(2) Updated the Example in the documentation for the MultipleChoice() function so that it no
+    longer produces Warnings
+
+(3) Updated the link to the website containing semantic spaces in the package description
+	
+
 [version 0.5.2] ChangeLog
 
 (1) All functions that want to use character vectors now automatically try to convert

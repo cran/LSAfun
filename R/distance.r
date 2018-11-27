@@ -40,7 +40,7 @@ distance <- function(x,y,method="euclidean",tvectors=tvectors,breakdown=FALSE){
       
       if(method == "euclidean"){
         
-        dist <- sqrt( sum( (v - w)^2 ) )
+        dist <- sqrt(sum((v - w)^2))
         
       }
       
@@ -61,4 +61,5 @@ distance <- function(x,y,method="euclidean",tvectors=tvectors,breakdown=FALSE){
     
   }else{stop("tvectors must be a matrix!")}
   
+  return(dist)
 }

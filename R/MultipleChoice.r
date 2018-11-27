@@ -16,5 +16,6 @@ MultipleChoice <- function(x,y,tvectors=tvectors,breakdown=FALSE){
   }
   
   
-  names(cos)[which(cos == max(cos))]
+  mc <- names(cos)[which(cos == max(cos))]
+  return(mc)
 }

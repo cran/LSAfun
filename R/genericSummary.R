@@ -74,5 +74,5 @@ genericSummary <- function(text,k,split=c(".","!","?"),min=5,breakdown=FALSE,...
   snum <- as.integer(snum)
   
   summary.sentences <- sentences[snum]
-  summary.sentences
+  return(summary.sentences)
 }

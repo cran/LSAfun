@@ -87,7 +87,7 @@ multicostring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
     }
     
     
-    cosmat
+    return(cosmat)
     
   }else{stop("tvectors must be a matrix!")}
   

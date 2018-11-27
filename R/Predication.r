@@ -117,7 +117,7 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
     out <- list(PA=PA,P.Pred=P.Pred,neighbors=neighbors,P=P,A=A)
     
     class(out) <- "Pred"
-    out
+    return(out)
     
   }else{
     stop("tvectors must be a matrix!")

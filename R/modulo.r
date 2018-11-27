@@ -5,5 +5,5 @@ modulo <- function(x,y){
   if(mod == 0){mod1 <- y}
   if(mod != 0){mod1 <- mod}
   
-  mod1
+  return(mod1)
 }

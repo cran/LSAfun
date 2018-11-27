@@ -61,7 +61,7 @@ neighbors <- function(x,n,tvectors=tvectors,breakdown=FALSE){
       
       words <- sort(allcosines,decreasing=T)[1:n]  # m nearest types to P
       
-      words
+      return(words)
     }
     
   }else{

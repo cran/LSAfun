@@ -44,8 +44,9 @@ The \code{\link[lsa]{lsa}} package works with (very) small corpora, but gets dif
 \item{DISSECT (Dinu, Pham, & Baroni, 2013), available \href{http://clic.cimec.unitn.it/composes/toolkit/}{here}}
 }
 
-Another possibility is to use one of the LSA spaces provided at \url{http://www.lingexp.uni-tuebingen.de/z2/LSAspaces}. These are stored in the \code{.rda} format. To load one of these spaces into the \code{R} workspace, save them into a directory, set the working directory to that directory, and load the space using \code{load()}.
-
+\subsection{Downloading semantic spaces}{
+Another possibility is to use one of the semantic spaces provided at \url{https://sites.google.com/site/fritzgntr/software-resources}. These are stored in the \code{.rda} format. To load one of these spaces into the \code{R} workspace, save them into a directory, set the working directory to that directory, and load the space using \code{load()}.
+}
 }
 
 

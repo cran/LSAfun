@@ -73,7 +73,7 @@ costring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
     #   out <- list(cos=cos,used1=used1,used2=used2,rest1=rest1,rest2=rest2)
     #   print(out)
     
-    cos
+    return(cos)
     
   }else{stop("tvectors must be a matrix!")}
   

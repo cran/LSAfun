@@ -5,6 +5,6 @@
 pos <- function(x){
   
   x[x < 0] <- 0
-  x
+  return(x)
   
 }

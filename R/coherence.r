@@ -42,7 +42,7 @@ coherence <- function(x,split=c(".","!","?"),tvectors=tvectors,
     global <- mean(local,na.rm=TRUE)
     
     out <- list(local=local,global=global)
-    out
+    return(out)
     
   }else{stop("tvectors must be a matrix!")}
 }

@@ -36,7 +36,8 @@ Cosine <- function(x,y,tvectors=tvectors,breakdown=FALSE){
     
     if(x %in% rownames(tvectors) && y %in% rownames(tvectors)){
       
-      as.numeric(cosine(tvectors[x,],tvectors[y,]))
+      out <- as.numeric(cosine(tvectors[x,],tvectors[y,]))
+      return(out)
       
     }else{
       

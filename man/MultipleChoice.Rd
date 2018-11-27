@@ -41,4 +41,4 @@ A warning message will be displayed if all words of one answer alternative are n
 
 LSAfun:::MultipleChoice("Who does the march hare celebrate his unbirthday with?",
                  c("Mad Hatter","Red Queen","Caterpillar","Cheshire Cat"),
-                 tvectors=wonderland)}
+                 tvectors=wonderland,breakdown=TRUE)}
