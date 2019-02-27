@@ -1,7 +1,7 @@
 ################################################
 ##### Plot Wordlist ############################
 
-#' @export plot_wordlist
+#' @export plot_doclist
 #' @importFrom rgl plot3d
 #' @importFrom rgl text3d
 #' @importFrom rgl segments3d
@@ -24,9 +24,10 @@
 #' @importFrom stats varimax
 #' @importFrom utils combn
 #' 
-plot_wordlist <- function(x,connect.lines="all",
+plot_doclist <- function(x,connect.lines="all",
                           method="PCA",dims=3,
-                          axes=F,box=F,cex=1,legend=T, size = c(800,800),
+                          axes=F,box=F,cex=1,chars=10,
+                          legend=T, size = c(800,800),
                           alpha="graded", alpha.grade = 1, col="rainbow", 
                           tvectors=tvectors,breakdown=FALSE,
                           ...){
@@ -56,20 +57,17 @@ plot_wordlist <- function(x,connect.lines="all",
       if(breakdown==TRUE){satz1 <- breakdown(x)} 
       if(breakdown==FALSE){satz1 <- x}  
       
-      used1      <- satz1[satz1 %in% rownames(tvectors)]
-      
-      if(length(used1) > 1){satz1vec <- colSums(tvectors[used1,])}
-      if(length(used1) == 1){satz1vec <- (tvectors[used1,])}
-      
-      if(length(used1)==0){return(warning(
-        "no element of x found in rownames(tvectors)"))
-      }
+      used1      <- satz1
       
       n <- length(used1)
       
-      cos.near  <- multicos(used1,tvectors=tvectors,
+      cosis  <- multidocs(used1,tvectors=tvectors,chars=chars,
                             breakdown=FALSE)
       
+      cos.near <- cosis$cosmat
+      colnames(cos.near) <- rownames(cos.near)
+      xdocs    <- cosis$xdocs
+      ydocs    <- cosis$ydocs
       
       
     }
@@ -129,7 +127,6 @@ plot_wordlist <- function(x,connect.lines="all",
       
       with(Lt,text3d(x,y,z,words2))
       
-      
       ### alpha="shade" backwards compatibility
       if(alpha=="shade"){alpha <- "graded"}
       
@@ -137,7 +134,6 @@ plot_wordlist <- function(x,connect.lines="all",
       ### Colour palette
       
       palette <- rainbow(101,start=0,end=0.95)
-      
       
       if(col[1] == "heat.colors"){palette <- heat.colors(101)}
       if(col[1] == "terrain.colors"){palette <- terrain.colors(101)}
@@ -158,7 +154,8 @@ plot_wordlist <- function(x,connect.lines="all",
       
       if(is.numeric(connect.lines) & connect.lines > (nrow(Lt) -1)){
         stop("cannot plot more connecting lines than number of points minus one")
-      }
+        }
+      
       
       if(connect.lines == "all"){
         
@@ -192,15 +189,15 @@ plot_wordlist <- function(x,connect.lines="all",
           if(!(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors")  | length(col) >= 3)){
             suppressWarnings(segments3d(segm,alpha=alpha.grade*(segm$pwsim)^2,col=col))}
           
-          if(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors") | length(col) >= 3){
+          if(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors")  | length(col) >= 3){
             suppressWarnings(segments3d(segm,alpha=alpha.grade*(segm$pwsim)^2,col=segm$colour))}
         }
         
         if(is.numeric(alpha)){
-          if(!(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors") | length(col) >= 3)){
+          if(!(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors")  | length(col) >= 3)){
             suppressWarnings(segments3d(segm,alpha=alpha,col=col))}
           
-          if(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors") | length(col) >= 3){
+          if(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors")  | length(col) >= 3){
             suppressWarnings(segments3d(segm,alpha=alpha,col=segm$colour))}
         }
         
@@ -226,6 +223,9 @@ plot_wordlist <- function(x,connect.lines="all",
           text(0.18,0.05,"cosine similarity")
         })
       }
+    
+      
+      
       
       if(class(connect.lines) == "numeric" && connect.lines > 0){
         
@@ -233,7 +233,7 @@ plot_wordlist <- function(x,connect.lines="all",
         
         which.indices       <- t(apply(cos.near, 1, order, decreasing = T)[ 1:(connect.lines+1), ])
         which.indices       <- as.data.frame(which.indices[,-1])
-        
+
         pre           <- as.vector(t(which.indices))
         alternate     <- rep((1:n),each=connect.lines)
         
@@ -268,29 +268,30 @@ plot_wordlist <- function(x,connect.lines="all",
         #### Plot lines
         
         if(alpha == "graded"){
-          if(!(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors") | length(col) >= 3)){
+          if(!(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors")   | length(col) >= 3)){
             suppressWarnings(segments3d(segm,alpha=alpha.grade*(segm$pwsim)^2,col=col))}
           
-          if(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors") | length(col) >= 3){
+          if(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors")   | length(col) >= 3){
             suppressWarnings(segments3d(segm,alpha=alpha.grade*(segm$pwsim)^2,col=segm$colour))}
         }
         
         if(is.numeric(alpha)){
-          if(!(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors") | length(col) >= 3)){
+          if(!(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors")   | length(col) >= 3)){
             suppressWarnings(segments3d(segm,alpha=alpha,col=col))}
           
-          if(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors") | length(col) >= 3){
+          if(col[1] %in% c("rainbow","heat.colors","terrain.colors","topo.colors","cm.colors")   | length(col) >= 3){
             suppressWarnings(segments3d(segm,alpha=alpha,col=segm$colour))}
         }
         
       }    
       
       
-      
+
       
     }
     
-    Lt[,-which(colnames(Lt) %in% c("words","words2"))]
+    return(list(coordinates=Lt[,-which(colnames(Lt) %in% c("words","words2"))],
+                xdocs=xdocs))
     
   }else{warning("tvectors must be a matrix!")}
 }

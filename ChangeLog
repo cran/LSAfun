@@ -1,3 +1,24 @@
+[version 0.6] ChangeLog
+
+(1) Added the functions multidocs() and plot_doclist()
+
+(2) Updated the functions plot_neighbors and plot_wordlists
+    (2.1) The luminance gradient alpha and the color of connect.lines and start.lines can
+	        now be changed independently from one another
+	(2.2) Replaced alpha="shade" with alpha="graded". However, alpha="shade" still works and is 
+	      automatically converted to alpha="graded".
+	(2.3) Added the parameter alpha.grade (default alpha.grade = 1) which allows to scale 
+	        the luminance of all connect.lines and start.lines by a certain factor when alpha="graded"
+	(2.4) Added more color palette options for the col parameter (heat.colors, terrain.colors,
+	        topo.colors, cm.colors)
+	(2.5) It is now also possible to include any customized color palette using the col parameter
+	(2.6) Added the parameter legend (default legend=T) to illustrate the color scheme of the connect.lines 
+	(2.7) Added the parameter size to control the size of the plots
+	(2.8) Changed the default parameters to connect.lines="all" and col="rainbow"
+	(2.9) Fixed a bug where connect.lines would not show the correct number of lines when set to a numerical value
+	    
+
+		
 [version 0.5.3] ChangeLog
 
 (1) Fixed a bug where the distance() function returned NULL values for the "euclidean" option
@@ -8,18 +29,21 @@
 (3) Updated the link to the website containing semantic spaces in the package description
 	
 
+	
 [version 0.5.2] ChangeLog
 
 (1) All functions that want to use character vectors now automatically try to convert
     the input to characters using as.character(). They inform the user with the message
 	"Note: x converted to character" when doing so.
 
+	
 
 [version 0.5.1] ChangeLog
 
 (1) All functions relying on a specification of a tvectors argument can now not
     only deal with "matrix" objects as input for tvectors, but also with "data.frame" 
 	or "textmatrix" objects
+	
 	
 
 [version 0.5] ChangeLog
@@ -29,6 +53,7 @@
 (2) Added the function pairwise()
 
 (3) Added a new CITATION file, citing the LSAfun journal article
+
 
 
 [version 0.4.1] ChangeLog
