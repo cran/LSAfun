@@ -17,15 +17,15 @@ print.Pred <- function(obj){
 #' @export
 Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
   
-  if(class(tvectors) == "data.frame"){
+  if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
-  }else if(class(tvectors) == "textmatrix"){
+  }else if("textmatrix" %in% class(tvectors)){
     tvectors <- matrix(tvectors,
                        nrow=nrow(tvectors),ncol=ncol(tvectors),
                        dimnames=list(rownames(tvectors),colnames(tvectors)))
   }
   
-  if(class(tvectors) == "matrix"){
+  if(is.matrix(tvectors)){
     
     if(breakdown==TRUE){
       

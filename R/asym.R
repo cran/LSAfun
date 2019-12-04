@@ -4,15 +4,15 @@
 
 asym <- function(x,y,method,t=0,tvectors,breakdown=FALSE){
   
-  if(class(tvectors) == "data.frame"){
+  if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
-  }else if(class(tvectors) == "textmatrix"){
+  }else if("textmatrix" %in% class(tvectors)){
     tvectors <- matrix(tvectors,
                        nrow=nrow(tvectors),ncol=ncol(tvectors),
                        dimnames=list(rownames(tvectors),colnames(tvectors)))
   }
   
-  if(class(tvectors) == "matrix"){
+  if(is.matrix(tvectors)){
     
     if(class(x) != "character"){
       x <- as.character(x)

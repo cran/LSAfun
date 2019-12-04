@@ -1,3 +1,8 @@
+[version 0.6.1] ChangeLog
+
+(1) Minor bug-fix
+
+
 [version 0.6] ChangeLog
 
 (1) Added the functions multidocs() and plot_doclist()
