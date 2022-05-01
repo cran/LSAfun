@@ -19,7 +19,7 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
-  }else if("textmatrix" %in% class(tvectors)){
+  }else if(inherits(tvectors,"textmatrix")){
     tvectors <- matrix(tvectors,
                        nrow=nrow(tvectors),ncol=ncol(tvectors),
                        dimnames=list(rownames(tvectors),colnames(tvectors)))
@@ -29,12 +29,12 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
     
     if(breakdown==TRUE){
       
-      if(class(P) != "character"){
+      if(!inherits(P,"character")){
         P <- as.character(P)
         message("Note: P converted to character")
       }
       
-      if(class(A) != "character"){
+      if(!inherits(A,"character")){
         A <- as.character(A)
         message("Note: A converted to character")
       }

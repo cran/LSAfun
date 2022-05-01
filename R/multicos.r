@@ -6,7 +6,7 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
-  }else if("textmatrix" %in% class(tvectors)){
+  }else if(inherits(tvectors,"textmatrix")){
     tvectors <- matrix(tvectors,
                        nrow=nrow(tvectors),ncol=ncol(tvectors),
                        dimnames=list(rownames(tvectors),colnames(tvectors)))
@@ -16,12 +16,12 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
     
     ## handle x
     
-    if(class(x) == "factor"){
+    if(inherits(x,"factor")){
       x <- as.character(x)
       message("Note: x converted to character")
     }
     
-    if(class(x)=="character"){
+    if(inherits(x,"character")){
       
       if(breakdown==TRUE){x <- breakdown(x)}
       
@@ -42,7 +42,7 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
       
     }
     
-    if(class(x)=="numeric"){
+    if(inherits(x,"numeric")){
       used1 <- "Expression in x"
       vecs1 <- t(as.matrix(x))
     }
@@ -50,7 +50,7 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
     ## handle y
     
     
-    if(class(y) == "factor"){
+    if(inherits(y,"factor")){
       y <- as.character(y)
       message("Note: y converted to character")
     }

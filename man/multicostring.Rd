@@ -11,12 +11,15 @@ Both x and y can also just consist of one single word.
 For computing the vector for the document/ sentence specified in \code{x}, the simple Addition model is used (see \code{\link[LSAfun]{costring}}).
 }
 
-\usage{multicostring(x,y,tvectors=tvectors,breakdown=FALSE)}
+\usage{multicostring(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector specifying a sentence/ document (or also a single word)}
   \item{y}{a character vector specifying multiple single words}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
+     \item{split}{a character vector defining the character used to split the documents into words (white space by default)}
+  \item{remove.punctuation}{removes punctuation from \code{x} and \code{y}; \code{TRUE} by default}
+
   \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
 
  

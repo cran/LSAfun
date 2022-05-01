@@ -37,7 +37,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
-  }else if("textmatrix" %in% class(tvectors)){
+  }else if(inherits(tvectors,"textmatrix")){
     tvectors <- matrix(tvectors,
                        nrow=nrow(tvectors),ncol=ncol(tvectors),
                        dimnames=list(rownames(tvectors),colnames(tvectors)))
@@ -45,13 +45,13 @@ plot_neighbors <- function(x,n,connect.lines="all",
   
   if(is.matrix(tvectors)){
     
-    if(class(x) == "factor"){
+    if(inherits(x,"factor")){
       x <- as.character(x)
       message("Note: x converted to character")
     }
     
     
-    if(class(x) == "character"){
+    if(inherits(x,"character")){
       
       if(breakdown==TRUE){satz1 <- breakdown(x)}  
       if(breakdown==FALSE){satz1 <- x}  
@@ -76,7 +76,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
     }
     
     
-    if(class(x) == "numeric"){
+    if(inherits(x,"numeric")){
       
       satz1vec  <- x
       
@@ -98,7 +98,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
     #### Add Phrase to diagram
     
     
-    if((class(x) == "character")){
+    if((inherits(x,"character"))){
       
       if(length(satz1split) > 1){
         
@@ -114,7 +114,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
     }
     
     
-    if(class(x) == "numeric"){
+    if(inherits(x,"numeric")){
       
       rownames(cos.near)[1] <- "Input Vector"
       colnames(cos.near)[1] <- "Input Vector"
@@ -290,7 +290,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
     
     
     
-    if(class(connect.lines) == "numeric" && connect.lines > 0){
+    if(inherits(connect.lines,"numeric") && connect.lines > 0){
       
       ### Find nearest to each word
       

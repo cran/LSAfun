@@ -1,3 +1,16 @@
+[version 0.6.2] ChangeLog
+
+(1) Updated the costring() and multicostring() functions 
+	(1.1) Now includes a remove.punctuation option (default: remove.punctuation=TRUE)
+			In the previous version, a sentence such as "the lion, the tiger, and the gazelle" would
+			be split into words such as "lion," or "tiger," instead of "lion" and "tiger", which
+			would then typically not be found in the semantic space
+	(1.2) Now includes a split option (default: split=" ") that allows users to define the character
+			by which the document/sentence should be split into individual words
+	(1.3) Now already returns a Note when *some* words cannot be found in the semantic space, instead of
+			just a warning when *all* words cannot be found
+
+
 [version 0.6.1] ChangeLog
 
 (1) Minor bug-fix

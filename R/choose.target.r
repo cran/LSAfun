@@ -8,7 +8,7 @@ choose.target <- function(x,lower,upper,n,tvectors=tvectors,
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
-  }else if("textmatrix" %in% class(tvectors)){
+  }else if(inherits(tvectors,"textmatrix")){
     tvectors <- matrix(tvectors,
                        nrow=nrow(tvectors),ncol=ncol(tvectors),
                        dimnames=list(rownames(tvectors),colnames(tvectors)))
@@ -16,7 +16,7 @@ choose.target <- function(x,lower,upper,n,tvectors=tvectors,
   
   if(is.matrix(tvectors)){ 
     
-    if(class(x) != "character"){
+    if(!inherits(x,"character")){
       x <- as.character(x)
       message("Note: x converted to character")
     }
@@ -42,6 +42,8 @@ choose.target <- function(x,lower,upper,n,tvectors=tvectors,
     }     
     
     names(allwords) <- rownames(tvectors)
+    
+    allwords <- allwords[!is.na(allwords)]
     
     a <- sample(allwords[allwords >= lower & allwords <= upper])[1:n]
         

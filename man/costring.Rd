@@ -18,18 +18,20 @@ directory to this directory using \code{setwd()}. Then use the following command
 \code{x <- readChar(fileName1, file.info(fileName1)$size)}
 }
 
-\usage{costring(x,y,tvectors=tvectors,breakdown=FALSE)}
+\usage{costring(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE,breakdown=FALSE)}
 
 \arguments{
   \item{x}{a character vector}
   \item{y}{a character vector}
-  \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
+ \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
+   \item{split}{a character vector defining the character used to split the documents into words (white space by default)}
+  \item{remove.punctuation}{removes punctuation from \code{x} and \code{y}; \code{TRUE} by default}
   \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
 
 
  
 }
-\value{A numeric giving the cosine between the input sentences/documents}
+\value{A numeric giving the cosine between the input documents/sentences}
 
 \author{
   Fritz Günther

@@ -8,7 +8,7 @@ compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,lambda=2,
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
-  }else if("textmatrix" %in% class(tvectors)){
+  }else if(inherits(tvectors,"textmatrix")){
     tvectors <- matrix(tvectors,
                        nrow=nrow(tvectors),ncol=ncol(tvectors),
                        dimnames=list(rownames(tvectors),colnames(tvectors)))
@@ -16,12 +16,12 @@ compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,lambda=2,
   
   if(is.matrix(tvectors)){
     
-    if(class(x) != "character"){
+    if(!inherits(x,"character")){
       x <- as.character(x)
       message("Note: x converted to character")
     }
     
-    if(class(y) != "character"){
+    if(!inherits(y,"character")){
       y <- as.character(y)
       message("Note: y converted to character")
     }

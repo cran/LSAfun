@@ -4,7 +4,7 @@
 \encoding{latin1}
 
 \description{
-Offers methods and functions for working with Vector Space Models of semantics, such as Latent Semantic Analysis (LSA).
+Offers methods and functions for working with Vector Space Models of semantics/distributional semantic models/word embeddings. The package was originally written for Latent Semantic Analysis (LSA), but can be used with all vector space models.
 Such models are created by algorithms working on a corpus of text documents. Those algorithms achieve a high-dimensional vector representation for word (and document) meanings. The exact LSA algorithm is described in Martin & Berry (2007).\cr
 Such a representation allows for the computation of word (and document) similarities, for example by computing cosine values of angles between two vectors.
 }
@@ -19,6 +19,16 @@ This package is not designed to create LSA semantic spaces. In R, this functiona
 }
 }
 
+
+\section{Video Tutorials}{
+
+A video tutorial for this package can be found here:
+\url{https://youtu.be/IlwIZvM2kg8}
+
+A video tutorial for using this package with vision-based representations from deep convolutional neural networks can be found here:
+\url{https://youtu.be/0PNrXraWfzI}
+
+}
 
 
 \section{How to obtain a semantic space}{
@@ -37,11 +47,11 @@ The \code{\link[lsa]{lsa}} package works with (very) small corpora, but gets dif
 
 \item{S-Space (Jurgens & Stevens, 2010), available \href{https://github.com/fozziethebeat/S-Space}{here}}
 
-\item{SemanticVectors (Widdows & Ferraro, 2008), available \href{https://code.google.com/p/semanticvectors/}{here}}
+\item{SemanticVectors (Widdows & Ferraro, 2008), available \href{https://github.com/semanticvectors/semanticvectors}{here}}
 
 \item{gensim (Rehurek & Sojka, 2010), available \href{https://radimrehurek.com/gensim/}{here}}
 
-\item{DISSECT (Dinu, Pham, & Baroni, 2013), available \href{http://clic.cimec.unitn.it/composes/toolkit/}{here}}
+\item{DISSECT (Dinu, Pham, & Baroni, 2013), available \href{https://github.com/composes-toolkit/dissect}{here}}
 }
 
 \subsection{Downloading semantic spaces}{
@@ -51,7 +61,7 @@ Another possibility is to use one of the semantic spaces provided at \url{https:
 
 
 \author{
-  Fritz Günther
+  Fritz GÃ¼nther
 }
 
 

@@ -2,11 +2,11 @@
 
 #' @export
 #' @importFrom lsa cosine
-multicostring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
+multicostring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE,breakdown=FALSE){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
-  }else if("textmatrix" %in% class(tvectors)){
+  }else if(inherits(tvectors,"textmatrix")){
     tvectors <- matrix(tvectors,
                        nrow=nrow(tvectors),ncol=ncol(tvectors),
                        dimnames=list(rownames(tvectors),colnames(tvectors)))
@@ -14,12 +14,12 @@ multicostring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
   
   if(is.matrix(tvectors)){
     
-    if(class(x) != "character"){
+    if(!inherits(x,"character")){
       x <- as.character(x)
       message("Note: x converted to character")
     }
     
-    if(class(y) != "character"){
+    if(!inherits(y,"character")){
       y <- as.character(y)
       message("Note: y converted to character")
     }
@@ -38,17 +38,24 @@ multicostring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
       
     }
     
+    if(remove.punctuation == TRUE){
+      satz1 <- gsub(satz1,pattern="[[:punct:]]",replacement = "")
+      y <- gsub(y,pattern="[[:punct:]]",replacement = "")
+    }
+    
     ### turn x into a single vector (added vectors of elements)
     
     if(length(satz1) == 1){
-      satz1split <- strsplit(satz1,split=" ")[[1]]
+      satz1split <- strsplit(satz1,split=split)[[1]]
     }
     
     if(length(satz1)  > 1){satz1split <- satz1}
     
     used1     <- satz1split[satz1split %in% rownames(tvectors)]
     if(length(used1)==0){(warning("no element of x found in rownames(tvectors)"))
-                         return(NA)}
+      return(NA)}else if(length(used1) < length(satz1split)){
+        (cat("Note: not all elements in x were found in rownames(tvectors)\n\n")) 
+      }
     
     rest1    <- satz1split[!(satz1split %in% rownames(tvectors))]
     
@@ -67,9 +74,7 @@ multicostring <- function(x,y,tvectors=tvectors,breakdown=FALSE){
     
     used2     <- ysplit[ysplit %in% rownames(tvectors)]
     if(length(used2)==0){(warning("no element of y found in rownames(tvectors)"))
-                         return(NA)}
-    
-    if(length(used2) < length(ysplit)){
+                         return(NA)}else if(length(used2) < length(ysplit)){
       cat("Note: not all elements in y were found in rownames(tvectors)\n\n")}
     
     vecs2 <- matrix(tvectors[used2,],nrow=length(used2))
