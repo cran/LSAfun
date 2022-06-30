@@ -17,19 +17,19 @@ directory to this directory using \code{setwd()}. Then use the following command
 
 }
 
-\usage{coherence(x,split=c(".","!","?"),tvectors=tvectors,breakdown=FALSE)}
+\usage{coherence(x,split=c(".","!","?"),tvectors=tvectors)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} containing the document}
   \item{split}{a vector of expressions that determine where to split sentences}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+
  
 }
 \value{A list of two elements; the first element (\code{$local}) contains the local coherences as a numeric vector, the second element (\code{$global}) contains the global coherence as a numeric.}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{cosine}},
@@ -43,9 +43,9 @@ directory to this directory using \code{setwd()}. Then use the following command
 
 \examples{data(wonderland)
 
-coherence ("There was certainly too much of it in the air. Even the Duchess
+coherence ("there was certainly too much of it in the air. even the duchess
 sneezed occasionally; and as for the baby, it was sneezing and howling
-alternately without a moment's pause. The only things in the kitchen
+alternately without a moment's pause. the only things in the kitchen
 that did not sneeze, were the cook, and a large cat which was sitting on
 the hearth and grinning from ear to ear.",
 tvectors=wonderland)}

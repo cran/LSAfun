@@ -3,7 +3,7 @@
 #' @export
 #' @importFrom lsa cosine
 
-pairwise <- function(x,y,tvectors=tvectors,breakdown=FALSE){
+pairwise <- function(x,y,tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -39,10 +39,6 @@ pairwise <- function(x,y,tvectors=tvectors,breakdown=FALSE){
     
     x[which(!(x %in% rownames(tvectors)))] <- NA
     y[which(!(y %in% rownames(tvectors)))] <- NA
-    
-    
-    if(breakdown==TRUE){x <- breakdown(x)
-                        y <- breakdown(y)}
     
     
     vecs1                    <- matrix(nrow=length(x),ncol=ncol(tvectors))

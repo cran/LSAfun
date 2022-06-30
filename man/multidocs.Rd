@@ -13,14 +13,15 @@ This function computes the cosines between two sets of documents (or sentences).
      The format of \code{x} (or \code{y}) should be of the kind \code{x <- c("this is the first text","here is another text")}
 }
 
-\usage{multidocs(x,y=x,chars=10,tvectors=tvectors,breakdown=FALSE)}
+\usage{multidocs(x,y=x,chars=10,tvectors=tvectors,remove.punctuation=TRUE)}
 
 \arguments{
   \item{x}{a character vector containing different sentences/documents}
   \item{y}{a character vector containing different sentences/documents (\code{y = x} by default)}
   \item{chars}{an integer specifying how many letters (starting from the first) of each sentence/document are to be printed in the row.names and col.names of the output matrix}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+    \item{remove.punctuation}{removes punctuation from \code{x} and \code{y}; \code{TRUE} by default}
+
 
 
  
@@ -32,7 +33,7 @@ This function computes the cosines between two sets of documents (or sentences).
 }
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{cosine}},
@@ -50,8 +51,8 @@ Semantic Analysis} (pp. 35-56). Mahwah, NJ: Erlbaum.\cr\cr
 }
 
 \examples{data(wonderland)
-multidocs(x = c("Alice was beginning to get very tired.",
-                "The red queen greeted Alice."),
-          y = c("The mad hatter and the mare hare are having a party.",
-                "The hatter sliced the cup of tea in half."), 
+multidocs(x = c("alice was beginning to get very tired.",
+                "the red queen greeted alice."),
+          y = c("the mad hatter and the mare hare are having a party.",
+                "the hatter sliced the cup of tea in half."), 
       tvectors=wonderland)}

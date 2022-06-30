@@ -2,7 +2,7 @@
 
 #' @export
 #' @importFrom lsa cosine
-multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
+multicos <- function(x,y=x,tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -22,8 +22,6 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
     }
     
     if(inherits(x,"character")){
-      
-      if(breakdown==TRUE){x <- breakdown(x)}
       
       if(length(x) == 1){
         xsplit <- strsplit(x,split=" ")[[1]]
@@ -54,8 +52,6 @@ multicos <- function(x,y=x,tvectors=tvectors,breakdown=FALSE){
       y <- as.character(y)
       message("Note: y converted to character")
     }
-    
-    if(breakdown==TRUE){y <- breakdown(y)}
     
     if(length(y) == 1){
       ysplit <- strsplit(y,split=" ")[[1]]

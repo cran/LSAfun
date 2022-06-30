@@ -28,7 +28,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
                            start.lines=T,method="PCA",dims=3,
                            axes=F,box=F,cex=1,legend=T, size = c(800,800),
                            alpha="graded", alpha.grade = 1, col="rainbow", 
-                           tvectors=tvectors,breakdown=FALSE,
+                           tvectors=tvectors,
                            ...){
   
   ### Compute neighbors
@@ -53,8 +53,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
     
     if(inherits(x,"character")){
       
-      if(breakdown==TRUE){satz1 <- breakdown(x)}  
-      if(breakdown==FALSE){satz1 <- x}  
+    satz1 <- x
       
       satz1split <- strsplit(satz1,split=" ")[[1]]
       used1      <- satz1split[satz1split %in% rownames(tvectors)]
@@ -68,8 +67,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
       
       
       near      <- names(neighbors(satz1vec,n,
-                                   tvectors=tvectors,
-                                   breakdown=breakdown))
+                                   tvectors=tvectors))
       
       
       
@@ -80,8 +78,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
       
       satz1vec  <- x
       
-      near      <- names(neighbors(x,n,tvectors=tvectors,
-                                   breakdown=breakdown))
+      near      <- names(neighbors(x,n,tvectors=tvectors))
       
       
       
@@ -91,8 +88,7 @@ plot_neighbors <- function(x,n,connect.lines="all",
     nearwords <- paste(near,collapse=" ")
     
     
-    cos.near  <- multicos(nearwords,tvectors=tvectors,
-                          breakdown=FALSE)
+    cos.near  <- multicos(nearwords,tvectors=tvectors)
     
     
     #### Add Phrase to diagram

@@ -33,7 +33,7 @@ Unlike the other  methods, this one is not derived from the logic of hypernymy, 
 
 
 
-\usage{asym(x,y,method,t=0,tvectors,breakdown=FALSE)}
+\usage{asym(x,y,method,t=0,tvectors)}
 
 \arguments{
   \item{x}{A single word, given as a character of \code{length(x) = 1}}
@@ -41,13 +41,13 @@ Unlike the other  methods, this one is not derived from the logic of hypernymy, 
   \item{method}{Specifying the formula to use for asymmetric similarity computation}
   \item{t}{A numeric threshold a dimension value of the vectors has to exceed so that the dimension is considered \emph{active}; not needed for the \code{kintsch} method}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+
 
 }
 \value{A numeric giving the asymmetric similarity between \code{x} and \code{y}}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[LSAfun]{Cosine}}

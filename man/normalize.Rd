@@ -26,7 +26,7 @@ To normalize a vector to a unit vector \eqn{u} with \eqn{||u|| = 1}, the followi
 \value{The normalized vector as a numeric}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 
   

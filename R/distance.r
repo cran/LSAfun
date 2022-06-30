@@ -2,7 +2,7 @@
 
 #' @export
 
-distance <- function(x,y,method="euclidean",tvectors=tvectors,breakdown=FALSE){
+distance <- function(x,y,method="euclidean",tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -23,14 +23,7 @@ distance <- function(x,y,method="euclidean",tvectors=tvectors,breakdown=FALSE){
       y <- as.character(y)
       message("Note: y converted to character")
     }
-    
-    if(breakdown==TRUE){
-      
-      x <- breakdown(x)
-      
-      y <- breakdown(y)
-      
-    }
+
     
     
     if(x %in% rownames(tvectors) && y %in% rownames(tvectors)){

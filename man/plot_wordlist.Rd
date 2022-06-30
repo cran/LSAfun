@@ -15,7 +15,7 @@ For creating pretty plots showing the similarity structure within this list of w
 \usage{plot_wordlist(x,connect.lines="all",method="PCA",dims=3,
    axes=F,box=F,cex=1,legend=T, size = c(800,800),
    alpha="graded",alpha.grade=1,col="rainbow",
-   tvectors=tvectors,breakdown=FALSE,\dots)}
+   tvectors=tvectors,\dots)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) > 1} that contains multiple sentences/documents}
@@ -28,7 +28,6 @@ For creating pretty plots showing the similarity structure within this list of w
     \item{legend}{(3d plot only) whether a legend shall be drawn illustrating the color scheme of the \code{connect.lines}. The legend is inserted as a background bitmap to the plot using \code{\link[rgl]{bgplot3d}}. Therefore, they do not resize very gracefully (see the \code{\link[rgl]{bgplot3d}} documentation for more information).}
   \item{size}{(3d plot only) A numeric vector with two elements, the first specifying the width and the second specifying the height of the plot device.}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
   \item{alpha}{(3d plot only) A numeric vector specifying the luminance of the \code{connect.lines}. By setting \code{alpha="graded"}, the luminance of every line will be adjusted to the cosine between the two words it connects.}
   \item{alpha.grade}{(3d plot only) Only relevant if \code{alpha="graded"}. Specify a numeric value for \code{alpha.grade} to scale the luminance of all \code{connect.lines} up (\code{alpha.grade} > 1) or down (\code{alpha.grade} < 1) by that factor.}
   \item{col}{(3d plot only) A vector specifying the color of the \code{connect.lines}.  With setting \code{col ="rainbow"} (default), the color of every line will be adjusted to the cosine between the two words it connects, according to the rainbow palette. Other available color palettes for this purpose are \code{heat.colors}, \code{terrain.colors}, \code{topo.colors}, and \code{cm.colors} (see \code{\link[grDevices]{rainbow}}). Additionally, you can customize any color scale of your choice by providing an input specifying more than one color  \cr (for example \code{col = c("black","blue","red")}).}
@@ -40,7 +39,7 @@ For creating pretty plots showing the similarity structure within this list of w
 \code{plot_wordlist} also gives the coordinate vectors of the words in the plot as a data frame}
 
 \author{
-  Fritz Günther, Taylor Fedechko
+  Fritz Guenther, Taylor Fedechko
 }
 \seealso{
   \code{\link[lsa]{cosine}},

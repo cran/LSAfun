@@ -4,7 +4,7 @@
 #' @importFrom stats convolve
 #' 
 compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,lambda=2,
-                    tvectors=tvectors,breakdown=FALSE,norm="none"){
+                    tvectors=tvectors,norm="none"){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -26,12 +26,6 @@ compose <- function(x,y,method="Add",a=1,b=1,c=1,m,k,lambda=2,
       message("Note: y converted to character")
     }
     
-    if(breakdown==TRUE){
-      
-      x <- breakdown(x)
-      y <- breakdown(y)
-      
-    }
     
     if(x %in% rownames(tvectors) && y %in% rownames(tvectors)){
       

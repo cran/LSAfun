@@ -28,7 +28,7 @@ plot_wordlist <- function(x,connect.lines="all",
                           method="PCA",dims=3,
                           axes=F,box=F,cex=1,legend=T, size = c(800,800),
                           alpha="graded", alpha.grade = 1, col="rainbow", 
-                          tvectors=tvectors,breakdown=FALSE,
+                          tvectors=tvectors,
                           ...){
   
   ### Compute neighbors
@@ -53,8 +53,7 @@ plot_wordlist <- function(x,connect.lines="all",
     
     if(inherits(x,"character")){
       
-      if(breakdown==TRUE){satz1 <- breakdown(x)} 
-      if(breakdown==FALSE){satz1 <- x}  
+      satz1 <- x  
       
       used1      <- satz1[satz1 %in% rownames(tvectors)]
       
@@ -67,8 +66,7 @@ plot_wordlist <- function(x,connect.lines="all",
       
       n <- length(used1)
       
-      cos.near  <- multicos(used1,tvectors=tvectors,
-                            breakdown=FALSE)
+      cos.near  <- multicos(used1,tvectors=tvectors)
       
       
       

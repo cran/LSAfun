@@ -11,7 +11,7 @@ Both x and y can also just consist of one single word.
 For computing the vector for the document/ sentence specified in \code{x}, the simple Addition model is used (see \code{\link[LSAfun]{costring}}).
 }
 
-\usage{multicostring(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE,breakdown=FALSE)}
+\usage{multicostring(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE)}
 
 \arguments{
   \item{x}{a character vector specifying a sentence/ document (or also a single word)}
@@ -20,14 +20,12 @@ For computing the vector for the document/ sentence specified in \code{x}, the s
      \item{split}{a character vector defining the character used to split the documents into words (white space by default)}
   \item{remove.punctuation}{removes punctuation from \code{x} and \code{y}; \code{TRUE} by default}
 
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
-
  
 }
 \value{A numeric giving the cosine between the input sentences/documents}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{cosine}},
@@ -46,10 +44,10 @@ Semantic Analysis} (pp. 35-56). Mahwah, NJ: Erlbaum.\cr\cr
 
 \examples{data(wonderland)
 
-multicostring("Alice was beginning to get very tired.",
-        "A white rabbit with a clock ran close to her.",
+multicostring("alice was beginning to get very tired.",
+        "a white rabbit with a clock ran close to her.",
         tvectors=wonderland)
 
-multicostring("Suddenly, a cat appeared in the woods",
+multicostring("suddenly, a cat appeared in the woods",
 names(neighbors("cheshire",n=20,tvectors=wonderland)), 
 tvectors=wonderland)}

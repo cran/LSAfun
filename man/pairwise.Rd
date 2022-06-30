@@ -7,20 +7,20 @@
 
 \details{Computes pairwise cosine similarities for two vectors of words. These vectors need to have the same length.}
 
-\usage{pairwise(x,y,tvectors=tvectors,breakdown=FALSE)}
+\usage{pairwise(x,y,tvectors=tvectors)}
 
 \arguments{
   \item{x}{a character vector}
   \item{y}{a character vector}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-    \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+
 
 
 }
 \value{A vector of the same length as \code{x} and \code{y} containing the pairwise cosine similarities. Returns \code{NA} if at least one word in a pair is not found in the semantic space.}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{cosine}},

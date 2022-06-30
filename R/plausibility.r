@@ -5,7 +5,7 @@
 #' @export
 #' @importFrom lsa cosine
 
-plausibility <- function(x,method,n=10,stem,tvectors=tvectors,breakdown=FALSE){
+plausibility <- function(x,method,n=10,stem,tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -25,8 +25,7 @@ plausibility <- function(x,method,n=10,stem,tvectors=tvectors,breakdown=FALSE){
     
     if(inherits(x,"character")){
       
-      if(breakdown==TRUE){satz1 <- breakdown(x)}  
-      if(breakdown==FALSE){satz1 <- x} 
+    satz1 <- x
       
       satz1split <- strsplit(satz1,split=" ")[[1]]
       

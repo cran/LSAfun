@@ -3,7 +3,7 @@
 #' @export
 #' @importFrom lsa cosine 
 
-multidocs <- function(x,y=x,chars=10,tvectors=tvectors,breakdown=FALSE){
+multidocs <- function(x,y=x,chars=10,tvectors=tvectors,remove.punctuation=TRUE){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -25,19 +25,14 @@ multidocs <- function(x,y=x,chars=10,tvectors=tvectors,breakdown=FALSE){
       message("Note: y converted to character")
     }
     
-    if(breakdown==TRUE){
-      
-      satz1 <- breakdown(x)
-      satz2 <- breakdown(y)
-      
-    }
-    
-    if(breakdown==FALSE){
-      
+
       satz1 <- x
       satz2 <- y
       
-    }
+      if(remove.punctuation == TRUE){
+        satz1 <- gsub(satz1,pattern="[[:punct:]]",replacement = "")
+        satz2 <- gsub(satz2,pattern="[[:punct:]]",replacement = "")
+      }
     
     
     doc1 <- NULL

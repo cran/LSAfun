@@ -1,3 +1,8 @@
+[version 0.6.3] ChangeLog
+
+(1) Removed the breakdown() function - take care that your queries match the entries of your semantic spaces!
+
+
 [version 0.6.2] ChangeLog
 
 (1) Updated the costring() and multicostring() functions 

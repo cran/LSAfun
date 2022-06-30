@@ -15,7 +15,7 @@ print.Pred <- function(obj){
 # Function
 
 #' @export
-Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
+Predication <- function(P,A,m,k,tvectors=tvectors,norm="none"){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -26,9 +26,7 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
   }
   
   if(is.matrix(tvectors)){
-    
-    if(breakdown==TRUE){
-      
+
       if(!inherits(P,"character")){
         P <- as.character(P)
         message("Note: P converted to character")
@@ -38,11 +36,7 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
         A <- as.character(A)
         message("Note: A converted to character")
       }
-      
-      P <- breakdown(P)
-      A <- breakdown(A)
-      
-    }
+ 
     
     tvectors_P   <- tvectors[P,]
     tvectors_A   <- tvectors[A,]
@@ -52,15 +46,13 @@ Predication <- function(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none"){
     # m nearest types to P
     
     
-    near.P <- neighbors(P,(m+1),tvectors=tvectors,
-                         breakdown=breakdown)[2:(m+1)]   
+    near.P <- neighbors(P,(m+1),tvectors=tvectors)[2:(m+1)]   
     
     
     
     # k nearest to A
     
-    near.PA <- multicos(A,names(near.P),tvectors=tvectors,
-                        breakdown=breakdown)[1,]
+    near.PA <- multicos(A,names(near.P),tvectors=tvectors)[1,]
     near.PA <- sort(near.PA,decreasing=T)[1:k]
     
     

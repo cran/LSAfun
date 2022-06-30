@@ -2,7 +2,7 @@
 
 #' @export
 #' @importFrom lsa cosine
-multicostring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE,breakdown=FALSE){
+multicostring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -24,20 +24,10 @@ multicostring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRU
       message("Note: y converted to character")
     }
     
-    if(breakdown==TRUE){
-      
-      satz1 <- breakdown(x)
-      y     <- breakdown(y)
-      
-    }
-    
-    if(breakdown==FALSE){
-      
+
       satz1 <- x
       y     <- y
-      
-    }
-    
+
     if(remove.punctuation == TRUE){
       satz1 <- gsub(satz1,pattern="[[:punct:]]",replacement = "")
       y <- gsub(y,pattern="[[:punct:]]",replacement = "")

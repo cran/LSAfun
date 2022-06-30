@@ -1,8 +1,7 @@
 ##### Coherence of a paragraph
 
 #' @export
-coherence <- function(x,split=c(".","!","?"),tvectors=tvectors,
-                      breakdown=FALSE){
+coherence <- function(x,split=c(".","!","?"),tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -32,7 +31,7 @@ coherence <- function(x,split=c(".","!","?"),tvectors=tvectors,
       
       for(i in 1:(length(sentences)-1)){
         local[i] <- costring(sentences[i],sentences[i+1],
-                             tvectors=tvectors,breakdown=breakdown)
+                             tvectors=tvectors)
       }
       
     })

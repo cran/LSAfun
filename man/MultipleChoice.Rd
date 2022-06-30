@@ -12,19 +12,20 @@ A warning message will be displayed if all words of one answer alternative are n
 
 }
 
-\usage{MultipleChoice(x,y,tvectors=tvectors,breakdown=FALSE)}
+\usage{MultipleChoice(x,y,tvectors=tvectors,remove.punctuation=TRUE)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} specifying a sentence/ document (or also a single word)}
   \item{y}{a character vector specifying multiple answer options}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+    \item{remove.punctuation}{removes punctuation from \code{x} and \code{y}; \code{TRUE} by default}
+
  
 }
 \value{The nearest option to \code{x} as a character}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{cosine}},
@@ -39,6 +40,6 @@ A warning message will be displayed if all words of one answer alternative are n
 
 \examples{data(wonderland)
 
-LSAfun:::MultipleChoice("Who does the march hare celebrate his unbirthday with?",
-                 c("Mad Hatter","Red Queen","Caterpillar","Cheshire Cat"),
-                 tvectors=wonderland,breakdown=TRUE)}
+LSAfun:::MultipleChoice("who does the march hare celebrate his unbirthday with?",
+                 c("mad hatter","red queen","caterpillar","cheshire Cat"),
+                 tvectors=wonderland)}

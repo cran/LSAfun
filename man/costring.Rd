@@ -18,7 +18,7 @@ directory to this directory using \code{setwd()}. Then use the following command
 \code{x <- readChar(fileName1, file.info(fileName1)$size)}
 }
 
-\usage{costring(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE,breakdown=FALSE)}
+\usage{costring(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE)}
 
 \arguments{
   \item{x}{a character vector}
@@ -26,7 +26,7 @@ directory to this directory using \code{setwd()}. Then use the following command
  \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
    \item{split}{a character vector defining the character used to split the documents into words (white space by default)}
   \item{remove.punctuation}{removes punctuation from \code{x} and \code{y}; \code{TRUE} by default}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+
 
 
  
@@ -34,7 +34,7 @@ directory to this directory using \code{setwd()}. Then use the following command
 \value{A numeric giving the cosine between the input documents/sentences}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{cosine}},
@@ -52,6 +52,6 @@ Semantic Analysis} (pp. 35-56). Mahwah, NJ: Erlbaum.\cr\cr
 }
 
 \examples{data(wonderland)
-costring("Alice was beginning to get very tired.",
-      "A white rabbit with a clock ran close to her.",
+costring("alice was beginning to get very tired.",
+      "a white rabbit with a clock ran close to her.",
       tvectors=wonderland)}

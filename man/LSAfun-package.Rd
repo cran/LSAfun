@@ -61,7 +61,7 @@ Another possibility is to use one of the semantic spaces provided at \url{https:
 
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 
 

@@ -37,7 +37,7 @@ On the other hand, \code{WeightAdd, Combined, Predication} and \code{Dilation} a
 \usage{
 ## Default 
 compose(x,y,method="Add", a=1,b=1,c=1,m,k,lambda=2,
-      tvectors=tvectors,breakdown=FALSE, norm="none")}
+      tvectors=tvectors, norm="none")}
 
 \arguments{
   \item{x}{a single word (character vector with \code{length(x) = 1)}}
@@ -49,7 +49,7 @@ compose(x,y,method="Add", a=1,b=1,c=1,m,k,lambda=2,
   \item{method}{the composition method to be used (see \emph{Details})}
   \item{norm}{whether to \code{\link[LSAfun]{normalize}} the single word vectors before applying a composition function. Setting \code{norm = "none"} will not perform any normalizations, setting \code{norm = "all"} will normalize every involved word vector. Setting \code{norm = "block"} is only valid for the \code{\link[LSAfun]{Predication}} method}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}  
+  
   }
  
 
@@ -57,7 +57,7 @@ compose(x,y,method="Add", a=1,b=1,c=1,m,k,lambda=2,
 }
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 
 \seealso{

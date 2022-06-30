@@ -4,7 +4,7 @@
 
 #' @export
 #' @importFrom lsa cosine
-neighbors <- function(x,n,tvectors=tvectors,breakdown=FALSE){
+neighbors <- function(x,n,tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -24,8 +24,7 @@ neighbors <- function(x,n,tvectors=tvectors,breakdown=FALSE){
     
     if(inherits(x,"character")){
       
-      if(breakdown==TRUE){satz1 <- breakdown(x)}  
-      if(breakdown==FALSE){satz1 <- x} 
+    satz1 <- x
       
       satz1split <- strsplit(satz1,split=" ")[[1]]
       

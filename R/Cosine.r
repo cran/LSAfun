@@ -3,7 +3,7 @@
 #' @export
 #' @importFrom lsa cosine 
 
-Cosine <- function(x,y,tvectors=tvectors,breakdown=FALSE){
+Cosine <- function(x,y,tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -25,13 +25,6 @@ Cosine <- function(x,y,tvectors=tvectors,breakdown=FALSE){
       message("Note: y converted to character")
     }
     
-    if(breakdown==TRUE){
-      
-      x <- breakdown(x)
-      
-      y <- breakdown(y)
-      
-    }
     
     
     if(x %in% rownames(tvectors) && y %in% rownames(tvectors)){

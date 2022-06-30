@@ -3,8 +3,7 @@
 #' @export
 #' @importFrom lsa cosine 
 
-choose.target <- function(x,lower,upper,n,tvectors=tvectors,
-                          breakdown=FALSE){
+choose.target <- function(x,lower,upper,n,tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -24,9 +23,7 @@ choose.target <- function(x,lower,upper,n,tvectors=tvectors,
 
     allwords <- vector(length=nrow(tvectors))
     
-    if(breakdown==TRUE){satz1 <- breakdown(x)}
-    if(breakdown==FALSE){satz1 <- x}
-    
+    satz1 <- x
     satz1split <- strsplit(satz1,split=" ")[[1]]
     
     used1     <- satz1split[satz1split %in% rownames(tvectors)]

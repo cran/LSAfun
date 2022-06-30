@@ -2,7 +2,7 @@
 
 #' @export
 
-conSIM <- function(x,y,z,c,tvectors=tvectors,breakdown=FALSE){
+conSIM <- function(x,y,z,c,tvectors=tvectors){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -33,16 +33,6 @@ conSIM <- function(x,y,z,c,tvectors=tvectors,breakdown=FALSE){
       c <- as.character(c)
       message("Note: c converted to character")
     }
-    
-    if(breakdown==TRUE){
-      
-      x <- breakdown(x) 
-      y <- breakdown(y)
-      z <- breakdown(z)
-      c <- breakdown(c)
-      
-    }
-    
     
     if(x %in% rownames(tvectors) && y %in% rownames(tvectors)){
       

@@ -21,7 +21,7 @@ The methods are defined as follows:
 }
 }
 
-\usage{plausibility(x,method, n=10,stem,tvectors=tvectors,breakdown=FALSE)}
+\usage{plausibility(x,method, n=10,stem,tvectors=tvectors)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} or a numeric of \code{length=ncol(tvectors)} vector with same dimensionality as LSA space}
@@ -29,13 +29,13 @@ The methods are defined as follows:
   \item{n}{the number of neighbors for the \code{n_density} method}
   \item{stem}{the stem (or word) of comparison for the \code{proximity} method}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+
  
 }
 \value{The semantic transparency as a numeric}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[LSAfun]{Cosine}},

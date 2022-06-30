@@ -16,19 +16,19 @@ Since \code{x} can also be chosen to be any vector of the active LSA Space, this
 combined with \code{compose()} to compute neighbors of complex expressions (see examples)
 }
 
-\usage{neighbors(x,n,tvectors=tvectors,breakdown=FALSE)}
+\usage{neighbors(x,n,tvectors=tvectors)}
 
 \arguments{
   \item{x}{a character vector of \code{length(x) = 1} or a numeric of \code{length=ncol(tvectors)} vector with same dimensionality as LSA space}
   \item{n}{the number of neighbors to be computed}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+
  
 }
 \value{A named numeric vector. The neighbors are given as names of the vector, and their respective cosines to the input as vector entries.}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{cosine}},

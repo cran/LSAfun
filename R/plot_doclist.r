@@ -29,7 +29,7 @@ plot_doclist <- function(x,connect.lines="all",
                           axes=F,box=F,cex=1,chars=10,
                           legend=T, size = c(800,800),
                           alpha="graded", alpha.grade = 1, col="rainbow", 
-                          tvectors=tvectors,breakdown=FALSE,
+                          tvectors=tvectors,remove.punctuation=TRUE,
                           ...){
   
   ### Compute neighbors
@@ -54,15 +54,13 @@ plot_doclist <- function(x,connect.lines="all",
     
     if(inherits(x,"character")){
       
-      if(breakdown==TRUE){satz1 <- breakdown(x)} 
-      if(breakdown==FALSE){satz1 <- x}  
+      satz1 <- x 
       
       used1      <- satz1
       
       n <- length(used1)
       
-      cosis  <- multidocs(used1,tvectors=tvectors,chars=chars,
-                            breakdown=FALSE)
+      cosis  <- multidocs(used1,tvectors=tvectors,chars=chars,remove.punctuation=remove.punctuation)
       
       cos.near <- cosis$cosmat
       colnames(cos.near) <- rownames(cos.near)

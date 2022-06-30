@@ -28,21 +28,20 @@ eration; otherwise, increment \emph{k} by one, and go to Step
 }
 
 
-\usage{genericSummary(text,k,split=c(".","!","?"),min=5,breakdown=FALSE,...)}
+\usage{genericSummary(text,k,split=c(".","!","?"),min=5,...)}
 
 \arguments{
   \item{text}{A character vector of \code{length(text) = 1} specifiying the text to be summarized}
   \item{k}{The number of sentences to be used in the summary}
   \item{split}{A character vector specifying which symbols determine the end of a sentence in the document}
   \item{min}{The minimum amount of words a sentence must have to be included in the computations}
-  \item{breakdown}{If \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
   \item{...}{Further arguments to be passed on to \code{\link[lsa]{textmatrix}}}
 
 }
 \value{A character vector of the length \emph{k}}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{textmatrix}},

@@ -3,7 +3,7 @@
 #' @export
 #' @importFrom lsa cosine 
  
-costring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE,breakdown=FALSE){
+costring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -25,20 +25,11 @@ costring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE,bre
       message("Note: y converted to character")
     }
     
-    if(breakdown==TRUE){
-      
-      satz1 <- breakdown(x)
-      satz2 <- breakdown(y)
-      
-    }
-    
-    if(breakdown==FALSE){
-      
+   
       satz1 <- x
       satz2 <- y
       
-    }
-    
+  
     if(remove.punctuation == TRUE){
       satz1 <- gsub(satz1,pattern="[[:punct:]]",replacement = "")
       satz2 <- gsub(satz2,pattern="[[:punct:]]",replacement = "")

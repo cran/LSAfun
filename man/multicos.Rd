@@ -13,21 +13,21 @@ Also allows for computation of cosines between a given numeric vector with the s
 dimensionality as the LSA space and a vector consisting of n words.
 }
 
-\usage{multicos(x,y=x,tvectors=tvectors,breakdown=FALSE)}
+\usage{multicos(x,y=x,tvectors=tvectors)}
 
 \arguments{
   \item{x}{a character vector or numeric of \code{length=ncol(tvectors)}
 (vector with same dimensionality as LSA space)}
   \item{y}{a character vector; y = x by default}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-    \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+
 
 
 }
 \value{A matrix containing the pairwise cosines of \code{x} and \code{y}}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[lsa]{cosine}},

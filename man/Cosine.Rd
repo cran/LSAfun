@@ -8,19 +8,19 @@
 \details{Instead of using numeric vectors, as the \code{cosine()} function from the lsa package does, this function allows for the direct computation of the cosine between two single words (i.e. Characters). which are automatically searched for in the LSA space given in as \code{tvectors}.}
 
 
-\usage{Cosine(x,y,tvectors=tvectors,breakdown=FALSE)}
+\usage{Cosine(x,y,tvectors=tvectors)}
 
 \arguments{
   \item{x}{A single word, given as a character of \code{length(x) = 1}}
   \item{y}{A single word, given as a character of \code{length(y) = 1}}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
+
 
 }
 \value{The cosine similarity as a numeric}
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 \seealso{
   \code{\link[LSAfun]{distance}}

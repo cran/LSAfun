@@ -6,13 +6,11 @@
 #' @importFrom lsa cosine
 #' @importFrom lsa textmatrix
 #' @importFrom lsa lsa 
-genericSummary <- function(text,k,split=c(".","!","?"),min=5,breakdown=FALSE,...){
+genericSummary <- function(text,k,split=c(".","!","?"),min=5,...){
  
   #### Decompose the document D into individual sentences
   
   sentences <- unlist(strsplit(text,split=split,fixed=T))
-  
-  if(breakdown==TRUE){sentences <- breakdown(sentences)}
   sentences <- sentences[nchar(sentences) > min]
   
   ## create temporary files

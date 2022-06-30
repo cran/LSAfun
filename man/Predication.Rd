@@ -12,7 +12,7 @@ the Argument are selected. The vector for the expression is then computed as the
 Predicate vector, Argument vector, and the vectors of those \code{k} neighbors (the \code{k}-neighborhood).
 }
 
-\usage{Predication(P,A,m,k,tvectors=tvectors,breakdown=FALSE,norm="none")}
+\usage{Predication(P,A,m,k,tvectors=tvectors,norm="none")}
 
 \arguments{
   \item{P}{Predicate of the expression, a single word (character vector)}
@@ -20,7 +20,6 @@ Predicate vector, Argument vector, and the vectors of those \code{k} neighbors (
   \item{m}{number of nearest words to the Predicate that are initially activated}
   \item{k}{size of the \code{k}-neighborhood; \code{k} \eqn{\le} \code{m}}
   \item{tvectors}{the semantic space in which the computation is to be done (a numeric matrix where every row is a word vector)}
-  \item{breakdown}{if \code{TRUE}, the function \code{\link[LSAfun]{breakdown}} is applied to the input}
   \item{norm}{whether to \code{\link[LSAfun]{normalize}} the single word vectors before applying a composition function. Setting \code{norm = "none"} will not perform any normalizations, setting \code{norm = "all"} will normalize every involved word vector (Predicate, Argument, and every single activated neighbor). Setting \code{norm = "block"} will normalize the Argument vector and will normalize the [Predicate + neighbors] vector, to weight the Argument and the "Predicate in context" equally.}
   
   }
@@ -35,7 +34,7 @@ Predicate vector, Argument vector, and the vectors of those \code{k} neighbors (
 }
 
 \author{
-  Fritz Günther
+  Fritz Guenther
 }
 
 \seealso{
@@ -47,7 +46,7 @@ Predicate vector, Argument vector, and the vectors of those \code{k} neighbors (
 }
 
 \references{
-Kintsch, W. (2001). Predication. \emph{Cognitive science, 25,} 173-202.
+Kintsch, W. (2001). Predication. \emph{Cognitive Science, 25,} 173-202.
 }
 
 \examples{data(wonderland)
