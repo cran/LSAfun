@@ -3,7 +3,7 @@
 #' @export
 #' @importFrom lsa cosine 
 
-multidocs <- function(x,y=x,chars=10,tvectors=tvectors,remove.punctuation=TRUE){
+multidocs <- function(x,y=x,chars=10,tvectors=tvectors,remove.punctuation=TRUE, stopwords = NULL, method ="Add"){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -40,11 +40,22 @@ multidocs <- function(x,y=x,chars=10,tvectors=tvectors,remove.punctuation=TRUE){
     
     for(i in 1:length(satz1)){
       satz1split <- strsplit(satz1[i],split=" ")[[1]]
+      
       used1     <- satz1split[satz1split %in% rownames(tvectors)]
       if(length(used1)==0){(warning("no element of x found in rownames(tvectors)"))
+        return(NA)}else if(length(used1) < length(satz1split)){
+          (cat("Note: not all elements in x were found in rownames(tvectors)\n\n")) 
+        }
+      used1     <- used1[!(used1 %in% stopwords)]
+      if(length(used1)==0){(warning("no element of x found in rownames(tvectors) after application of stopwords"))
         return(NA)}
+      
       rest1    <- satz1split[!(satz1split %in% rownames(tvectors))]
-      if(length(used1) >1){satz1vec <- colSums(tvectors[used1,])}
+      
+      if(length(used1) >1){
+        if(method=="Add"){satz1vec <- colSums(tvectors[used1,])}
+        if(method=="Multiply"){satz1vec <- apply(tvectors[used1,],2,prod)}
+      }
       if(length(used1)==1){satz1vec <- tvectors[used1,]}
       doc1 <- rbind(doc1,satz1vec)
       
@@ -68,11 +79,22 @@ multidocs <- function(x,y=x,chars=10,tvectors=tvectors,remove.punctuation=TRUE){
     
     for(i in 1:length(satz2)){
       satz2split <- strsplit(satz2[i],split=" ")[[1]]
+      
       used2     <- satz2split[satz2split %in% rownames(tvectors)]
-      if(length(used2)==0){(warning("no element of x found in rownames(tvectors)"))
+      if(length(used2)==0){(warning("no element of y found in rownames(tvectors)"))
+        return(NA)}else if(length(used1) < length(satz1split)){
+          (cat("Note: not all elements in y were found in rownames(tvectors)\n\n")) 
+        }
+      used2     <- used2[!(used2 %in% stopwords)]
+      if(length(used2)==0){(warning("no element of y found in rownames(tvectors) after application of stopwords"))
         return(NA)}
+      
       rest2    <- satz2split[!(satz2split %in% rownames(tvectors))]
-      if(length(used2) >1){satz2vec <- colSums(tvectors[used2,])}
+      
+      if(length(used2) >1){
+        if(method=="Add"){satz2vec <- colSums(tvectors[used2,])}
+        if(method=="Multiply"){satz2vec <- apply(tvectors[used2,],2,prod)}
+      }
       if(length(used2)==1){satz2vec <- tvectors[used2,]}
       doc2 <- rbind(doc2,satz2vec)
       

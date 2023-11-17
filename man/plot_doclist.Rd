@@ -5,11 +5,17 @@
 
 \description{2D or 3D-Plot of mutual word similarities to a given list of sentences/documents}
 
-\details{Computes all pairwise similarities within a given list of sentences/documents. On this similarity matrix, a Principal Component Analysis (PCA) or a Multidimensional Sclaing (MDS) is applied to get a two- or three-dimensional solution that best captures the similarity structure. This solution is then plotted.\cr
+\details{Computes all pairwise similarities within a given list of sentences/documents. On this similarity matrix, a Principal Component Analysis (PCA) or a Multidimensional Sclaing (MDS) is applied to get a two- or three-dimensional solution that best captures the similarity structure. This solution is then plotted.
+
+
 In the traditional LSA approach, the vector \emph{D} for a document (or a sentence) consisting of the words \emph{(t1, . , tn)} is computed as
              \deqn{D = \sum\limits_{i=1}^n t_n}
-This function then computes the the cosines between two sets of documents (or sentences).\cr\cr
-     The format of \code{x} should be of the kind \code{x <- c("this is the first text","here is another text")}\cr
+This function then computes the the cosines between two sets of documents (or sentences).
+
+
+     The format of \code{x} should be of the kind \code{x <- c("this is the first text","here is another text")}
+     
+     
 For creating pretty plots showing the similarity structure within this list of words best, set \code{connect.lines="all"} and \code{col="rainbow"}
 }
 
@@ -37,7 +43,9 @@ For creating pretty plots showing the similarity structure within this list of w
   \item{\dots}{additional arguments which will be passed to \code{\link[rgl]{plot3d}} (in a three-dimensional plot only)}
 }
 
-\value{see \code{\link[rgl]{plot3d}}: this function is called for the side effect of drawing the plot; a vector of object IDs is returned.\cr
+\value{see \code{\link[rgl]{plot3d}}: this function is called for the side effect of drawing the plot; a vector of object IDs is returned.
+
+
 \code{plot_doclist} further prints a list with two elements:
 \item{coordinates}{the coordinate vectors of the sentences/documents in the plot as a data frame}
 \item{xdocs}{A legend for the sentence/document labels in the plot and in the \code{coordinates}}
@@ -57,7 +65,8 @@ For creating pretty plots showing the similarity structure within this list of w
   \code{\link[grDevices]{rainbow}}
 }
 
-\references{Landauer, T.K., & Dumais, S.T. (1997). A solution to Plato's problem: The Latent Semantic Analysis theory of acquisition, induction and representation of knowledge. \emph{Psychological Review, 104,} 211-240.\cr\cr
+\references{Landauer, T.K., & Dumais, S.T. (1997). A solution to Plato's problem: The Latent Semantic Analysis theory of acquisition, induction and representation of knowledge. \emph{Psychological Review, 104,} 211-240.
+
 
 Mardia, K.V., Kent, J.T., & Bibby, J.M. (1979). \emph{Multivariate Analysis}, London: Academic Press.
 }

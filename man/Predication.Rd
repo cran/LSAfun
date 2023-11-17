@@ -6,7 +6,9 @@
 \description{Computes vectors for complex expressions of type PREDICATE[ARGUMENT] by applying the method of Kintsch (2001) (see \emph{Details}).}
 
 \details{
-The vector for the expression is computed following the Predication Process by Kintsch (2001):\cr
+The vector for the expression is computed following the Predication Process by Kintsch (2001):
+
+
 The \code{m} nearest neighbors to the Predicate are computed. Of those, the \code{k} nearest neighbors to
 the Argument are selected. The vector for the expression is then computed as the sum of
 Predicate vector, Argument vector, and the vectors of those \code{k} neighbors (the \code{k}-neighborhood).
@@ -25,7 +27,9 @@ Predicate vector, Argument vector, and the vectors of those \code{k} neighbors (
   }
  
 
-\value{An object of class \code{Pred}: This object is a list consisting of:\cr
+\value{An object of class \code{Pred}: This object is a list consisting of:
+
+
 \item{\code{$PA}}{The vector for the complex expression as described above}
 \item{\code{$P.Pred}}{The vector for Predicate plus the \emph{k}-neighborhoodvectors without the Argument vector}
 \item{\code{$neighbors}}{The words in the \emph{k}-neighborhood.} 

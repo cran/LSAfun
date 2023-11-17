@@ -5,7 +5,9 @@
 
 \description{
 Offers methods and functions for working with Vector Space Models of semantics/distributional semantic models/word embeddings. The package was originally written for Latent Semantic Analysis (LSA), but can be used with all vector space models.
-Such models are created by algorithms working on a corpus of text documents. Those algorithms achieve a high-dimensional vector representation for word (and document) meanings. The exact LSA algorithm is described in Martin & Berry (2007).\cr
+Such models are created by algorithms working on a corpus of text documents. Those algorithms achieve a high-dimensional vector representation for word (and document) meanings. The exact LSA algorithm is described in Martin & Berry (2007).
+
+
 Such a representation allows for the computation of word (and document) similarities, for example by computing cosine values of angles between two vectors.
 }
 
@@ -33,15 +35,18 @@ A video tutorial for using this package with vision-based representations from d
 
 \section{How to obtain a semantic space}{
 
-\emph{LSAfun} comes with one example LSA space, the \link{wonderland} space.\cr
+\emph{LSAfun} comes with one example LSA space, the \link{wonderland} space.
+
+
 This package can also directly use LSA semantic spaces created with the \code{\link[lsa]{lsa}}-package. Thus, it allows the user to use own LSA spaces. 
-(Note that the function \code{\link[lsa]{lsa}} gives a list of three matrices. Of those, the term matrix \code{U} should be used.)\cr
+(Note that the function \code{\link[lsa]{lsa}} gives a list of three matrices. Of those, the term matrix \code{U} should be used.)
+
 
 
 
 
 The \code{\link[lsa]{lsa}} package works with (very) small corpora, but gets difficulties in scaling up to larger corpora. In this case, it is recommended to use specialized software for creating semantic spaces, such as
-\cr
+
 
 \itemize{
 

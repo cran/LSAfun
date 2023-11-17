@@ -3,7 +3,9 @@
 \alias{wonderland}
 \title{LSA Space: Alice's Adventures in Wonderland}
 \description{
-  This data set is a 50-dimensional LSA space derived from Lewis Carrol's book "Alice's Adventures in Wonderland". The book was split into 791 paragraphs which served as documents for the LSA algorithm (Landauer, Foltz & Laham, 1998). Only words that appeared in at least two documents were used for building the LSA space.\cr
+  This data set is a 50-dimensional LSA space derived from Lewis Carrol's book "Alice's Adventures in Wonderland". The book was split into 791 paragraphs which served as documents for the LSA algorithm (Landauer, Foltz & Laham, 1998). Only words that appeared in at least two documents were used for building the LSA space.
+  
+  
   This LSA space contains 1123 different terms, all in lower case letters, and was created using the \code{\link[lsa]{lsa}}-package. It can be used as \code{tvectors} for all the functions in the \code{LSAfun}-package.
 }
 \usage{data(wonderland)}

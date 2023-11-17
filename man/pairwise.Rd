@@ -28,12 +28,13 @@
   \code{\link[LSAfun]{multicos}},
 }
 
-\references{Landauer, T.K., & Dumais, S.T. (1997). A solution to Plato's problem: The Latent Semantic Analysis theory of acquisition, induction and representation of knowledge. \emph{Psychological Review, 104,} 211-240.\cr\cr
+\references{Landauer, T.K., & Dumais, S.T. (1997). A solution to Plato's problem: The Latent Semantic Analysis theory of acquisition, induction and representation of knowledge. \emph{Psychological Review, 104,} 211-240.
 
-Dennis, S. (2007). How to use the LSA Web Site. In T. K. Landauer, D. S. McNamara, S. Dennis, & W. Kintsch (Eds.), \emph{Handbook of Latent
-Semantic Analysis} (pp. 35-56). Mahwah, NJ: Erlbaum.\cr\cr
 
-\url{http://lsa.colorado.edu/}
+Dennis, S. (2007). How to use the LSA Web Site. In T. K. Landauer, D. S. McNamara, S. Dennis, & W. Kintsch (Eds.), \emph{Handbook of Latent Semantic Analysis} (pp. 35-56). Mahwah, NJ: Erlbaum.
+
+
+\url{http://wordvec.colorado.edu/}
 }
 
 

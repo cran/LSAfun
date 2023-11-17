@@ -6,7 +6,9 @@
 \description{Randomly samples words within a given similarity range to the input}
 
 \details{
-Computes cosine values between the input \code{x} and all the word vectors in \code{tvectors}. Then only selects words with a cosine similarity between \code{lower} and \code{upper} to the input, and randomly samples \code{n} of these words.\cr
+Computes cosine values between the input \code{x} and all the word vectors in \code{tvectors}. Then only selects words with a cosine similarity between \code{lower} and \code{upper} to the input, and randomly samples \code{n} of these words.
+
+
 This function is designed for randomly selecting target words with a predefined similarity towards a given prime word (or sentence/document).
 }
 
@@ -35,7 +37,9 @@ This function is designed for randomly selecting target words with a predefined 
 
 }
 
-\references{Landauer, T.K., & Dumais, S.T. (1997). A solution to Plato's problem: The Latent Semantic Analysis theory of acquisition, induction and representation of knowledge. \emph{Psychological Review, 104,} 211-240.\cr\cr
+\references{Landauer, T.K., & Dumais, S.T. (1997). A solution to Plato's problem: The Latent Semantic Analysis theory of acquisition, induction and representation of knowledge. \emph{Psychological Review, 104,} 211-240.
+
+
 }
 
 \examples{data(wonderland)

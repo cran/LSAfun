@@ -17,15 +17,20 @@
 \format{A named list containing five character vectors as elements}
 \source{\href{http://www.gutenberg.org}{Project Gutenberg}}
 \references{ 
- Dumas, A. (1844). \emph{The Three Musketeers}. Retrieved from\cr http://www.gutenberg.org/ebooks/1257
+ Dumas, A. (1844). \emph{The Three Musketeers}. Retrieved from
+ http://www.gutenberg.org/ebooks/1257
  
- Shelley, M. W. (1818). \emph{Frankenstein; Or, The Modern Prometheus}. Retrieved from\cr http://www.gutenberg.org/ebooks/84
+ Shelley, M. W. (1818). \emph{Frankenstein; Or, The Modern Prometheus}. Retrieved from
+ http://www.gutenberg.org/ebooks/84
  
- Stevenson, R. L. (1886). \emph{The Strange Case of Dr. Jekyll and Mr. Hyde}. Retrieved from\cr http://www.gutenberg.org/ebooks/42
+ Stevenson, R. L. (1886). \emph{The Strange Case of Dr. Jekyll and Mr. Hyde}. Retrieved from
+ http://www.gutenberg.org/ebooks/42
  
- Stoker, B. (1897). \emph{Dracula}. Retrieved from\cr http://www.gutenberg.org/ebooks/345
+ Stoker, B. (1897). \emph{Dracula}. Retrieved from
+ http://www.gutenberg.org/ebooks/345
  
- Verne, J.(1873). \emph{Around the World in Eighty Days}. Retrieved from\cr http://www.gutenberg.org/ebooks/103
+ Verne, J.(1873). \emph{Around the World in Eighty Days}. Retrieved from
+ http://www.gutenberg.org/ebooks/103
  
  
 

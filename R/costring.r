@@ -3,7 +3,7 @@
 #' @export
 #' @importFrom lsa cosine 
  
-costring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE){
+costring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE, stopwords = NULL, method ="Add"){
   
   if(is.data.frame(tvectors)){
     tvectors <- as.matrix(tvectors)
@@ -51,20 +51,32 @@ costring <- function(x,y,tvectors=tvectors,split=" ",remove.punctuation=TRUE){
                          return(NA)}else if(length(used1) < length(satz1split)){
                            (cat("Note: not all elements in x were found in rownames(tvectors)\n\n")) 
                          }
+    used1     <- used1[!(used1 %in% stopwords)]
+    if(length(used1)==0){(warning("no element of x found in rownames(tvectors) after application of stopwords"))
+      return(NA)}
     
     used2     <- satz2split[satz2split %in% rownames(tvectors)]
     if(length(used2)==0){(warning("no element of y found in rownames(tvectors)"))
-                         return(NA)}else if(length(used1) < length(satz1split)){
+                         return(NA)}else if(length(used2) < length(satz2split)){
                            (cat("Note: not all elements in y were found in rownames(tvectors)\n\n")) 
                          }
+    used2     <- used2[!(used2 %in% stopwords)]
+    if(length(used2)==0){(warning("no element of y found in rownames(tvectors) after application of stopwords"))
+      return(NA)}
     
-    rest1    <- satz1split[!(satz1split %in% rownames(tvectors))]
-    rest2    <- satz2split[!(satz2split %in% rownames(tvectors))]
+    # rest1    <- satz1split[!(satz1split %in% rownames(tvectors))]
+    # rest2    <- satz2split[!(satz2split %in% rownames(tvectors))]
     
-    if(length(used1) >1){satz1vec <- colSums(tvectors[used1,])}
+    if(length(used1) >1){
+      if(method=="Add"){satz1vec <- colSums(tvectors[used1,])}
+      if(method=="Multiply"){satz1vec <- apply(tvectors[used1,],2,prod)}
+      }
     if(length(used1)==1){satz1vec <- tvectors[used1,]}
     
-    if(length(used2) >1){satz2vec <- colSums(tvectors[used2,])}
+    if(length(used2) >1){
+      if(method=="Add"){satz2vec <- colSums(tvectors[used2,])}
+      if(method=="Multiply"){satz2vec <- apply(tvectors[used2,],2,prod)}
+    }
     if(length(used2)==1){satz2vec <- tvectors[used2,]}
     
     cos      <- as.numeric(cosine(satz1vec,satz2vec))

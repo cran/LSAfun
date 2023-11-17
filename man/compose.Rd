@@ -18,19 +18,26 @@ The different composition methods as described by Mitchell & Lapata (2008, 2010)
   
   \item Combined Model (\code{method = "Combined"}) \deqn{p_i = a*u_i + b*v_i + c*u_i*v_i }
   
-  \item Predication (\code{method = "Predication"}) 
-  \cr(see \code{\link[LSAfun]{Predication}})
+  \item Predication (\code{method = "Predication"}) (see \code{\link[LSAfun]{Predication}})
   
 If \code{method="Predication"} is used, \code{x} will be taken as Predicate and \code{y} will be taken as Argument of the phrase (see \emph{Examples})
 
-  \item Circular Convolution (\code{method = "CConv"}) \deqn{p_i = \sum\limits_{j} u_j * v_{i-j}},\cr where the subscripts of \eqn{v} are interpreted modulo \eqn{n} with \eqn{n =} \code{length(x)}(= \code{length(y)})
+  \item Circular Convolution (\code{method = "CConv"}) \deqn{p_i = \sum\limits_{j} u_j * v_{i-j}},
   
-  \item Dilation (\code{method = "Dilation"}) \deqn{p = (u*u)*v + (\lambda - 1)*(u*v)*u},\cr
+  where the subscripts of \eqn{v} are interpreted modulo \eqn{n} with \eqn{n =} \code{length(x)}(= \code{length(y)})
+  
+  \item Dilation (\code{method = "Dilation"}) \deqn{p = (u*u)*v + (\lambda - 1)*(u*v)*u},
+  
+  
  with \eqn{(u*u)} being the dot product of \eqn{u} and \eqn{u} (and \eqn{(u*v)} being the dot product of \eqn{u} and \eqn{v}).  
 
 }
 
-The \code{Add, Multiply,} and \code{CConv} methods are \emph{symmetrical} composition methods,\cr i.e. \code{compose(x="word1",y="word2")} will give the same results as \code{compose(x="word2",y="word1")}\cr
+The \code{Add, Multiply,} and \code{CConv} methods are \emph{symmetrical} composition methods,
+
+i.e. \code{compose(x="word1",y="word2")} will give the same results as \code{compose(x="word2",y="word1")}
+
+
 On the other hand, \code{WeightAdd, Combined, Predication} and \code{Dilation} are \emph{asymmetrical}, i.e. \code{compose(x="word1",y="word2")} will give different results than \code{compose(x="word2",y="word1")}
 }
 

@@ -18,8 +18,12 @@
 
 
 }
-\value{A list of two similarity values:\cr
-\code{SIM_XY_zc}: Similarity of \code{x} and \code{y}, given the alternative \code{z} and the context \code{c}\cr
+\value{A list of two similarity values
+
+
+\code{SIM_XY_zc}: Similarity of \code{x} and \code{y}, given the alternative \code{z} and the context \code{c}
+
+
 \code{SIM_XZ_yc}: Similarity of \code{x} and \code{z}, given the alternative \code{y} and the context \code{c}}
 
 \author{
@@ -31,7 +35,9 @@
   
 }
 
-\references{Kintsch, W. (2015). Similarity as a Function of Semantic Distance and Amount of Knowledge. \emph{Psychological Review, 121,} 559-561.\cr
+\references{Kintsch, W. (2015). Similarity as a Function of Semantic Distance and Amount of Knowledge. \emph{Psychological Review, 121,} 559-561.
+
+
 
 Tversky, A. (1977). Features of similarity. \emph{Psychological Review, 84,} 327-352.
 }

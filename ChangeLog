@@ -1,3 +1,24 @@
+[version 0.7.1] ChangeLog
+
+(1) Added the functions analogy() and SND()
+
+(2) Updates to functions that compute a document/sentence vector from the included word vectors:
+	costring(), multicostring(), MultipleChoice(), multidocs()
+	(2.1) Added a "method" option to choose how document/sentence vectors are computed from the word vectors: 
+			method="Add" for vector additon, or method="Multiply" for element-wise multiplication
+	(2.2) Added a "stopword" option to specify a character vector of words that should not 
+			be used to compute the document/sentence vector
+			
+(3) Updates to the MultipleChoice() function
+	(3.1) Added a "all.results" option to determine the output value of the function:
+			"all.results=FALSE" (default): As in the previous versions, only returns the closest answer option
+			"all.results=TRUE": returns a named numeric vector, where the names are the different answer options,
+								and the numeric values their respective cosine similarity to the question, 
+								sorted by decreasing similarity
+	(3.2) Added the third option method="Analogy" beyond method="Add" and method="Multiply" inherited from costring()
+
+
+
 [version 0.6.3] ChangeLog
 
 (1) Removed the breakdown() function - take care that your queries match the entries of your semantic spaces!

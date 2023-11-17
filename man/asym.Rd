@@ -5,10 +5,16 @@
 
 \description{Compute various asymmetric similarities between words}
 
-\details{Asymmetric (or directional) similarities can be useful e.g. for examining \emph{hypernymy} (category inclusion), for example the relation between \emph{dog} and \emph{animal} should be asymmetrical. The general idea is that, if one word is a hypernym of another (i.e. it is semantically narrower), then a significant number of dimensions that are salient in this word should also be salient in the semantically broader term (Lenci & Benotto, 2012).\cr\cr
+\details{Asymmetric (or directional) similarities can be useful e.g. for examining \emph{hypernymy} (category inclusion), for example the relation between \emph{dog} and \emph{animal} should be asymmetrical. The general idea is that, if one word is a hypernym of another (i.e. it is semantically narrower), then a significant number of dimensions that are salient in this word should also be salient in the semantically broader term (Lenci & Benotto, 2012).
+
+
 In the formulas below, \eqn{w_x(f)} denotes the value of vector \eqn{x} on dimension \eqn{f}. Furthermore, \eqn{F_x} is the set of \emph{active} dimensions of vector \eqn{x}. A dimension \eqn{f} is considered active if
-\eqn{w_x(f) > t}, with \eqn{t} being a pre-defined, free parameter.\cr
-The options for \code{method} are defined as follows (see Kotlerman et al., 2010) (1)):\cr\cr
+\eqn{w_x(f) > t}, with \eqn{t} being a pre-defined, free parameter.
+
+
+The options for \code{method} are defined as follows (see Kotlerman et al., 2010) (1)):
+
+
 \itemize{
 
   \item{\code{method = "weedsprec"}} \deqn{weedsprec(u,v) = \frac{\sum\nolimits_{f \in F_u \cap F_v}w_u(f)}{\sum\nolimits_{f \in F_u}w_u(f)}}      
@@ -20,7 +26,9 @@ The options for \code{method} are defined as follows (see Kotlerman et al., 2010
 
   \item{\code{method = "invcl"}} \deqn{invcl(u,v) = \sqrt{clarkede(u,v)\times(1-clarkede(u,v)})}      
 
-\item{\code{method = "kintsch"}}\cr\cr
+\item{\code{method = "kintsch"}}
+
+
 Unlike the other  methods, this one is not derived from the logic of hypernymy, but rather from asymmetrical similarities between words due to different amounts of knowledge about them. Here, asymmteric similarities between two words are computed by taking into account the vector length (i.e. the amount of information about those words). This is done by projecting one vector onto the other, and normalizing this resulting vector by dividing its length by the length of the longer of the two vectors (Details in Kintsch, 2014, see References). 
 
 }
