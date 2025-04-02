@@ -1,12 +1,13 @@
-9d98781b428c350b35f7fb414be4f5a0 *ChangeLog
-06f9dabcd5b086d0c3460174b7e79f09 *DESCRIPTION
-fd1fc3f0f75aadaef84abb6d928edcff *NAMESPACE
+74ee582bdc4803915aff3c18ff12101a *ChangeLog
+7b2214d39fc2454173ccb997d013fb5e *DESCRIPTION
+2994bca382bb0cecf9a3ddcf2d5941d0 *NAMESPACE
 006b394cf620b56b3bac2d87d66c0753 *R/Cosine.r
 d5f2dc793140f04c2aaa844445d1e32b *R/MultipleChoice.r
-0244aeb21f50632753797feb7361a17b *R/Predication.r
+6e59a7e1aa39c0db2ef63cf4d574e5dd *R/Predication.r
 7eaa77caea35f4facbecaebe0969e321 *R/SND.r
 94fed5b5e96c4ad272315ad467ef2f07 *R/analogy.r
 2dcf658c3fe1c9899ee46d679a6241bf *R/asym.R
+ded43bd2c33e9dc92bb7f1d747414bb9 *R/centroid_analysis.r
 56a39bc7a1f97b823128e063d9563f72 *R/choose.target.r
 92ebb226e0c0d3285a614cddc404f5f5 *R/coherence.r
 ed7ae67397989427a510405f59b72e56 *R/compose.r
@@ -39,6 +40,7 @@ e26244724e6f1c98006346a59443b580 *man/LSAfun-package.Rd
 31ef06a20b372c7ce9f81ba7dfb1522f *man/SND.Rd
 6b9ab397a5d86a0bb95fc5b9c8a4911f *man/analogy.Rd
 910e4bfd4fc2ba78e0b2f5f9402aa7e4 *man/asym.Rd
+3ea84c66fe92a94951f5507bd51f0ced *man/centroid_analysis.Rd
 538632d5d0b794e3cbd9bfc0e3f72637 *man/choose.target.Rd
 d12c4fca03c005612dbce0299093aa92 *man/coherence.Rd
 10a32f6aaf375c15a3ab442d5356c237 *man/compose.Rd

@@ -1,3 +1,9 @@
+[version 0.8.1] ChangeLog
+
+(1) Added the function centroid_analysis()
+
+
+
 [version 0.7.1] ChangeLog
 
 (1) Added the functions analogy() and SND()
@@ -24,6 +30,7 @@
 (1) Removed the breakdown() function - take care that your queries match the entries of your semantic spaces!
 
 
+
 [version 0.6.2] ChangeLog
 
 (1) Updated the costring() and multicostring() functions 
@@ -40,6 +47,7 @@
 [version 0.6.1] ChangeLog
 
 (1) Minor bug-fix
+
 
 
 [version 0.6] ChangeLog

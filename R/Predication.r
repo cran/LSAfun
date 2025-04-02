@@ -1,15 +1,16 @@
 ##### Predication ##############################
 
+#' @export
 
 # Print Method
 
-print.Pred <- function(obj){
+print.Pred <- function(x, ...){
   cat("\nPredication Results\n\n")
-  cat("Input: Predicate    ", obj$P,"    Argument:    ", obj$A, "\n\n")
-  cat("Predication Vector ($PA):\n ",(obj$PA), "\n\n")
-  cat("Predicate Vector without Argument ($P.Pred):\n ",(obj$P.Pred), "\n\n")
-  cat("Used neighborhood words ($neighbors):\n", obj$neighbors, "\n")
-  invisible(obj)
+  cat("Input: Predicate    ", x$P,"    Argument:    ", x$A, "\n\n")
+  cat("Predication Vector ($PA):\n ",(x$PA), "\n\n")
+  cat("Predicate Vector without Argument ($P.Pred):\n ",(x$P.Pred), "\n\n")
+  cat("Used neighborhood words ($neighbors):\n", x$neighbors, "\n")
+  invisible(x)
 }
 
 # Function
